@@ -1,0 +1,32 @@
+@font-face {
+    font-family: DroidSerif Bold; 
+    src: url("../fonts/DroidSerif-Bold.ttf");
+}
+@font-face {
+    font-family: DroidSerif Regular; 
+    src: url("../fonts/DroidSerif-Regular.ttf");
+   }
+   @font-face {
+    font-family: DroidSerif-Italic; 
+    src: url("../fonts/DroidSerif-Italic.ttf");
+}
+@font-face {
+    font-family: DroidSerif-BoldItalic; 
+    src: url("../fonts/DroidSerif-BoldItalic.ttf");
+   }
+   @font-face {
+    font-family: "DroidSerif Bold"; 
+    src: url("../fonts/DroidSerif-Bold.ttf");
+}
+@font-face {
+    font-family: DroidSerif Regular; 
+    src: url("../fonts/DroidSerif-Regular.ttf");
+   }
+@font-face {
+	font-family: Lovelo; 
+	src: url("../fonts/Lovelo_Black.otf");
+}
+@font-face {
+	font-family: MinionPro-Semibold; 
+	src: url("../fonts/MinionPro-Semibold.otf");
+}
