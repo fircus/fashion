@@ -64,6 +64,112 @@
             <p>Best people club &copy 2016</p>
         </div>
     </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/close1.png"></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="login">
+                            <div class="form-group">
+                                <div>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Login">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                                <p class="wrong">Неверный логин или пароль!</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="form-group">
+                                <div>
+                                    <button type="submit" class="btn btn-default">Enter</button>
+                                </div>
+                            </div>
+                            <div class="login">
+                                <a class="forgot-pass" href="#">Забыли пароль?</a>
+                                <div>
+                                    <button id="registration" class="btn1 btn-default" type="submit" data-toggle="modal" data-target="#myModal2">Регистрация</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p>Авторизоваться через социальные сети</p>
+                        <ul class="icon-footer">
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/facebook.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta2.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk2.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube1.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/twitter2.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/close1.png"></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="additional-data">
+                            <div class="form-group">
+                                <div>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Login">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="password" class="form-control" id="inputEmail3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="email" class="form-control" id="inputPassword3" placeholder="Email">
+                                </div>
+                            </div>
+                            <img src="<?=get_site_url()?>/wp-content/themes/best-people/images/code.png">
+                        </div>
+                        <div class="buttons">
+                            <div class="additional-data">
+                                <div>
+                                    <button id="code" class="btn1 btn-default" type="submit">Код подтверждения</button>
+                                </div>
+                                <a class="forgot-pass" href="#">Получить новый код</a>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <button type="submit" class="btn btn-default">Enter</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p>Авторизоваться через социальные сети</p>
+                        <ul class="icon-footer">
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/facebook.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta2.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk2.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube1.png"></a></li>
+                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/twitter2.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 </div>
 
@@ -74,7 +180,27 @@
 <script src="<?=get_site_url()?>/wp-content/themes/best-people/js/owl.carousel.min.js"></script>
 <script>
     $(document).ready(function() {
-        var owl = $("#slide1");
+        var owl = $(".top-carousel .owl-carousel");
+        owl.owlCarousel({
+            items : 1,
+            loop: true
+            //lazyLoad: true,
+            //nav : true
+        });
+        // Custom Navigation Events
+        $(".top-carousel .next").click(function(){
+            owl.trigger('next.owl.carousel', [1000]);
+            //owl.next();
+        })
+        $(".top-carousel .prev").click(function(){
+            owl.trigger('prev.owl.carousel', [1000]);
+        })
+
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var owl = $(".big-carousel .owl-carousel");
         owl.owlCarousel({
             items : 1,
             loop: true,
@@ -82,11 +208,11 @@
             //nav : true
         });
         // Custom Navigation Events
-        $(".next1").click(function(){
+        $(".big-carousel .next").click(function(){
             owl.trigger('next.owl.carousel', [1000]);
             //owl.next();
         })
-        $(".prev1").click(function(){
+        $(".big-carousel .prev").click(function(){
             owl.trigger('prev.owl.carousel', [1000]);
         })
 
@@ -94,27 +220,7 @@
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $("#slide2");
-        owl.owlCarousel({
-            items : 1,
-            loop: true,
-            //lazyLoad: true,
-            //nav : true
-        });
-        // Custom Navigation Events
-        $(".next2").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
-            //owl.next();
-        })
-        $(".prev2").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
-        })
-
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        var owl = $("#slide3");
+        var owl = $(".small-carousel .owl-carousel");
         owl.owlCarousel({
             items : 3,
             loop: true,
@@ -122,31 +228,11 @@
             //nav : true
         });
         // Custom Navigation Events
-        $(".next3").click(function(){
+        $(".small-carousel .next").click(function(){
             owl.trigger('next.owl.carousel', [1000]);
             //owl.next();
         })
-        $(".prev3").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
-        })
-
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        var owl = $("#slide4");
-        owl.owlCarousel({
-            items : 3,
-            loop: true,
-            //lazyLoad: true,
-            //nav : true
-        });
-        // Custom Navigation Events
-        $(".next4").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
-            //owl.next();
-        })
-        $(".prev4").click(function(){
+        $(".small-carousel .prev").click(function(){
             owl.trigger('prev.owl.carousel', [1000]);
         })
 
