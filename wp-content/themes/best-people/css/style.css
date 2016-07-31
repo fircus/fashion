@@ -82,6 +82,7 @@ header .navbar-left {
 	height: 30px;
 	width: 106%;
 	padding-top: 5px;
+    padding-left: 25px;
 	border-bottom: 25px solid #000000;
 	border-right: 10px solid transparent;
 }
@@ -115,7 +116,7 @@ header .navbar-brand {
 }
 header .dropdown-menu {
 	width: 300px;
-	padding-left: 0px;
+	padding-left: 4px;
 	padding-top: 15px;
 	border: none !important;
 	box-shadow: none;
@@ -128,20 +129,18 @@ header .dropdown-menu li {
 }
 header .dropdown-menu li a:hover  {
 	color: black !important;
-	background-color: #FFFFFF !important;
-	margin-top: 7px;
+	background-color: transparent !important;
 }
 header .navbar-left .dropdown-menu li  a {
 	padding-left: 11px;
 	padding-right: 7px;
-	margin-top: 5px;
 }
 header .navbar-right .dropdown-menu li  a {
 	padding-left: 1px;
 	padding-right: 0px;
 }
 header .navbar-right .dropdown-menu {
-	right: -50px;
+	right: -44px;
 	left: auto;
 }
 header .navbar-right .dropdown:first-child .dropdown-menu{
@@ -556,8 +555,9 @@ p {
 }
 .comments .form-control {
 	height: 110px;
-	width: 520px;
-	margin: 0px auto 30px;
+	width: 100%!important;
+	margin-bottom: 30px;
+	margin-top: 5px;
 	border-radius: 5px;
 	padding-bottom: 80px;
 	padding-left: 10px;
@@ -831,6 +831,9 @@ footer .dropdown-menu li a:hover  {
 	position: relative;
 	height: 50px;
 }
+.modal-content .icon-footer .ulogin_block{
+	margin-left: 24px;
+}
 .modal-content .additional-data{
 	text-align: center;
 }
@@ -863,8 +866,8 @@ footer .dropdown-menu li a:hover  {
 .modal-body .btn {
 	margin-left: 7px;
 	padding-top: 5px;
-	padding-left: 12px;
-	width: 85px;
+	padding-left: 15px;
+	padding-right: 15px;
 	height: 25px;
 	background: #2ff4c1; /* Old browsers */
 	background: -moz-linear-gradient(top, #2ff4c1 0%, #036d3a 100%); /* FF3.6-15 */
@@ -2189,8 +2192,11 @@ footer .dropdown-menu li a:hover  {
 		margin-left: 4px;
 	}
 	header .navbar-right li {
-		margin-right: 5%;
-	}
+         margin-right: 5%;
+     }
+    header .navbar-left > li {
+        margin-right: 5%;
+    }
 	header .dropdown:hover .dropdown-menu {
 		display: block;
 		margin-top: 0;
@@ -2208,8 +2214,8 @@ footer .dropdown-menu li a:hover  {
 		padding-right: 0px;
 	}
 	header .navbar-left li a {
-		padding-left: 13%;
-		padding-right: 23%;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 	header .navbar .active {
 		color: #FFFFFF !important;
@@ -2294,4 +2300,15 @@ img{
 .small-carousel .owl-carousel .item {
 	width: 92%!important;
 	margin-left: 4%;
+}
+.logout-btn{
+	background: none;
+}
+.logout-btn:focus,.logout-btn:hover,.logout-btn:active {
+	border: transparent;
+	outline: none;
+}
+.logout-btn .glyphicon{
+	left: -10px;
+	color: #999999;
 }

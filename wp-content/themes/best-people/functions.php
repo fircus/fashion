@@ -411,9 +411,7 @@ class WP_video_Widget extends WP_Widget
         ?>
         <div class="col-md-6">
             <h1>[<?= $instance['title'] ?>]</h1>
-            <video width="100%" height="100%" controls>
-                <source src="<?= $instance['url'] ?>" type="video/mp4">
-            </video>
+            <iframe width="420" height="315" src="<?=$instance['url']?>" frameborder="0" allowfullscreen></iframe>
             <h2><?= $instance['label'] ?><span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
             </h2>
         </div>
@@ -553,9 +551,9 @@ class WP_4_small_articles_table_Widget extends WP_Widget
                 </a>
                 <h3><? the_title(); ?></h3>
                 <? the_excerpt(); ?>
-                <a href="<? the_permalink() ?>" class="col-md-3 clearfix visible-md-block visible-lg-block">
-                    <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next1.png">
-                </a>
+<!--                <a href="--><?// the_permalink() ?><!--" class="col-md-3 clearfix visible-md-block visible-lg-block">-->
+<!--                    <img src="--><?//= get_site_url() ?><!--/wp-content/themes/best-people/images/next1.png">-->
+<!--                </a>-->
             </div>
             <?php
             $counter++;
@@ -788,14 +786,14 @@ function custom_comment($comment, $args, $depth) {
     <div class="col-md-12 col-sm-12 col-xs-12 comment" id="comment-<?php comment_ID(); ?>">
         <div class="col-md-12 border">
 
-            <a href="">
-                <img class="img-responsive" src="<?= get_site_url() ?>/wp-content/themes/best-people/images/comments.jpg">
+            <a href="javascript:void(0)">
+                <?php echo get_avatar($comment->comment_author_email, 96, '', '', array('class' => 'img-responsive', 'alt' => $comment->comment_author)); ?>
             </a>
             <p><?php comment_text() ?></p>
-<!--            <a href="#">Подробнее...</a>-->
-            <a class="like" href="#">
-                <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/like.png">271
-            </a>
+
+            <?php
+                if(function_exists('like_counter_c')) { like_counter_c('text for like'); }
+            ?>
 
         </div>
 
@@ -805,8 +803,72 @@ function custom_comment($comment, $args, $depth) {
 function custom_excerpt_length( $length ) {
     return 20;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+function ajax_login_init(){
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+}
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_login_init');
+}
+function ajax_login(){
+    // First check the nonce, if it fails the function will break
+    check_ajax_referer( 'ajax-login-nonce', 'security' );
+    // Nonce is checked, get the POST data and sign user on
+    $info = array();
+    $reg_errors = new WP_Error;
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
 
+    if($_POST['isRegistration'] == 'true') {
+        $info['user_email'] = $_POST['email'];
+
+        if ( empty( $info['user_login'] ) || empty( $info['user_password'] ) || empty( $info['user_email'] ) ) {
+            $reg_errors->add('field', 'Не все поля заполнены!');
+        }
+        if ( 4 > strlen( $info['user_login'] ) ) {
+            $reg_errors->add( 'username_length', 'Имя пользователя должно содержать минимум 4 символа!' );
+        }
+        if ( username_exists( $info['user_login'] ) ) {
+            $reg_errors->add('user_name', 'Такое имя пользователя уже существует!');
+        }
+        if ( ! validate_username( $info['user_login'] ) ) {
+            $reg_errors->add( 'username_invalid', 'Имя пользователя не валидное!' );
+        }
+        if ( 5 > strlen( $info['user_password'] ) ) {
+            $reg_errors->add( 'password', 'Пароль должен быть больше 5 символов!' );
+        }
+        if ( !is_email( $info['user_email'] ) ) {
+            $reg_errors->add( 'email_invalid', 'Email не валидный!' );
+        }
+        if ( email_exists( $info['user_email'] ) ) {
+            $reg_errors->add( 'email', 'Email уже используется!' );
+        }
+
+        if(!empty($reg_errors->errors)) {
+            echo json_encode(array('loggedin'=>false, 'errors'=>$reg_errors));
+        } else {
+            //wp_insert_user($info);
+            wp_create_user( $info['user_login'], $info['user_password'], $info['user_email'] );
+            wp_signon( $info, false );
+            echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+        }
+
+    } else {
+        $user_signon = wp_signon( $info, false );
+        if ( is_wp_error($user_signon) ){
+            echo json_encode(array('loggedin'=>false, 'message'=>__('Неверный логин или пароль!')));
+        } else {
+            echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, redirecting...')));
+        }
+    }
+
+    die();
+}
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 add_theme_support('post-thumbnails');
+show_admin_bar(false);
 
 ?>

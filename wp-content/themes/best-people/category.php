@@ -1,18 +1,23 @@
 <?php get_header(); ?>
+<? $filterDate = isset($_GET['date']) ? $_GET['date'] : '';?>
+<? $filterTag = isset($_GET['tag']) ? $_GET['tag'] : '';?>
+<? $tag_list = get_tags(); ?>
+
 <div class="main1">
     <div class="forms col-md-4 clearfix visible-md-block visible-lg-block">
         <div class="col-md-6">
-            <label class="label1" for="selectstyle">Город</label>
-            <select name="language" class="form-control1" id="selectstyle">
-                <option>Киев...</option>
-                <option>Винница...</option>
+            <label class="label1" for="selectstyle">Тэг</label>
+            <select name="language" class="form-control1" id="tag-list">
+                <? foreach ($tag_list as $tag):?>
+                    <option <?=$filterTag == $tag->name ? 'selected' : ''?> value="<?=$tag->name?>"><?=$tag->name?>...</option>
+                <? endforeach;?>
             </select>
         </div>
         <div class='col-md-6'>
             <label class="label2" for="datetimepicker5">По дате</label>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker5'>
-                    <input type='text' class="form-control" />
+                    <input type='text' class="form-control" value="<?=$filterDate?>" />
                     <span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 						</span>
@@ -21,11 +26,28 @@
         </div>
     </div>
     <div class="col-sm-4 col-xs-2 bottom clearfix visible-xs-block  visible-sm-block"></div>
-    <div class="col-sm-4 col-xs-8 col-md-12"><h1>[<? single_cat_title(); ?>]</h1></div>
+    <div class="col-sm-4 col-xs-8 col-md-12"><h1>[<?=substr(get_category_parents( get_query_var('cat') , false , '/' ), 0, -1);?>]</h1></div>
     <div class="col-sm-4 col-xs-2 bottom clearfix  visible-xs-block visible-sm-block"></div>
     <div class="col-md-12">
         <div class="col-md-9 col-sm-12 col-xs-12">
-            <? query_posts('category__in='.get_query_var('cat'));?>
+            <?
+                if($filterDate != '') {
+                    $arr = explode('/', $filterDate);
+                    $month = $arr[0];
+                    $day = $arr[1];
+                    $year = $arr[2];
+                    $dateQuery = '&monthnum='.$month.'&day='.$day.'&year='.$year;
+                } else {
+                    $dateQuery = '';
+                }
+
+                if($filterTag != '') {
+                    $tagQuery = '&tag='.$filterTag;
+                } else {
+                    $tagQuery = '';
+                }
+                query_posts('category__in='.get_query_var('cat').$dateQuery.$tagQuery);
+            ?>
             <? while (have_posts()) : the_post(); ?>
                 <div class="category col-md-12 col-sm-12">
                 <div class="col-md-8 col-xs-12">
@@ -35,7 +57,7 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <p class="p1"><? the_time('d.m.Y') ?><span class="red"><br class="clearfix visible-md-block visible-lg-block">
-				<a class="category1" href="#"><span>[</span>Theatre<span>]</span></a></p>
+				<a class="category1" href="<?=get_category_link(get_the_category()[0]->cat_ID);?>"><span>[</span><?=get_the_category()[0]->name?><span>]</span></a></p>
                     <h3><? the_title(); ?></h3>
                     <p class="clearfix visible-sm-block visible-md-block visible-lg-block">
                         <?= get_the_excerpt()?>

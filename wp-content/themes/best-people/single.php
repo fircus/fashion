@@ -5,33 +5,35 @@
             <div class="col-md-12 articles">
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="col-md-12 article">
-                        <p class="p2"><? the_date('d.m.Y') ?><a href="#"><span>[</span>Books<span>]</span></a>
+                        <p class="p2"><? the_date('d.m.Y') ?><a href="<?=get_category_link(get_the_category()[0]->cat_ID);?>"><span>[</span><?=get_the_category()[0]->name?><span>]</span></a>
                         </p>
                         <h2><? the_title(); ?></h2>
                         <? the_content(); ?>
 
-
-                        <p class="author">Текст: Леся Гончарова<br>
-                            Фото: Бубу Мгвамба</p>
                         <div class="col-md-4 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block"><p
                                 class="p3">Поделиться</p></div>
                         <div
                             class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 clearfix visible-sm-block visible-md-block visible-lg-block">
                             <ul class="icon-footer">
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img
-                                            src="<?= get_site_url() ?>/wp-content/themes/best-people/images/face_f.png"></a>
+                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
+                                    <a href="http://www.facebook.com/sharer.php?u=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
+                                        <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/face_f.png">
+                                    </a>
                                 </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img
-                                            src="<?= get_site_url() ?>/wp-content/themes/best-people/images/insta_f.png"></a>
+                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
+                                    <a href="http://vkontakte.ru/share.php?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
+                                        <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/vk_f.png">
+                                    </a>
                                 </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img
-                                            src="<?= get_site_url() ?>/wp-content/themes/best-people/images/vk_f.png"></a>
+                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
+                                    <a href="https://plus.google.com/share?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
+                                        <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/youtube_f.png">
+                                    </a>
                                 </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img
-                                            src="<?= get_site_url() ?>/wp-content/themes/best-people/images/youtube_f.png"></a>
-                                </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img
-                                            src="<?= get_site_url() ?>/wp-content/themes/best-people/images/twitter_f.png"></a>
+                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
+                                    <a href="http://twitter.com/share?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>&text=<? the_title(); ?>" target="_blank">
+                                        <img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/twitter_f.png">
+                                    </a>
                                 </li>
                             </ul>
                         </div>

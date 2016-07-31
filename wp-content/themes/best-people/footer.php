@@ -19,23 +19,28 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav" id="list1">
+                    <? $categories = get_categories(array('hide_empty' => false)); ?>
+                    <? $counter = 0;?>
+                    <? foreach($categories as $category):?>
+                    <? if($category->parent != 0) continue;?>
+                    <? $children = get_categories(array('parent' => $category->term_id, 'hide_empty' => false)); ?>
+                    <? if(sizeof($children) != 0):?>
                     <li class="dropdown">
-                        <a class="clearfix visible-sm-block visible-xs-block" href="#">Culture</a><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                        <a href="#" class="clearfix visible-md-block visible-lg-block dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Culture</a>
+                        <a class="clearfix visible-sm-block visible-xs-block" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <a href="<?=get_category_link($category->cat_ID);?>" class="clearfix visible-md-block visible-lg-block dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$category->name?></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Cinema</a></li>
-                            <li><a href="#">Theatre</a></li>
-                            <li><a href="#">Art</a></li>
-                            <li><a href="#">Book</a></li>
+                            <? foreach($children as $child):?>
+                                <li><a href="<?=get_category_link($child->cat_ID);?>"><?=$child->name?></a></li>
+                            <? endforeach;?>
                         </ul>
                     </li>
-                    <li id="liststyle1"><a href="#">Fashion</a></li>
-                    <li id="liststyle1"><a href="#">People</a></li>
-                    <li id="liststyle1"><a href="#">Businnes</a></li>
-                    <li id="liststyle1"><a href="#">Place</a></li>
-                    <li id="liststyle1"><a href="#">Announce</a></li>
-                    <li id="liststyle1"><a href="#">Music</a></li>
-                    <li id="liststyle1"><a href="#">Fashion TV</a></li>
+                    <? else: ?>
+                        <li><a href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a></li>
+                    <? endif;?>
+                    <? $counter++; ?>
+                    <? if($counter == 8) break; ?>
+                    <? endforeach;?>
                 </ul>
             </div>
         </nav>
@@ -72,41 +77,48 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="form-horizontal">
-                        <div class="login">
-                            <div class="form-group">
-                                <div>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Login">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                                <p class="wrong">Неверный логин или пароль!</p>
-                            </div>
-                        </div>
-                        <div class="buttons">
-                            <div class="form-group">
-                                <div>
-                                    <button type="submit" class="btn btn-default">Enter</button>
-                                </div>
-                            </div>
+                        <form name="loginform" method="post">
                             <div class="login">
-                                <a class="forgot-pass" href="#">Забыли пароль?</a>
-                                <div>
-                                    <button id="registration" class="btn1 btn-default" type="submit" data-toggle="modal" data-target="#myModal2">Регистрация</button>
+                                <div class="form-group">
+                                    <div>
+                                        <input name="username" type="text" class="form-control" id="inputEmail3" placeholder="Логин">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Пароль">
+                                    </div>
+                                    <p class="wrong" style="display: none">Неверный логин или пароль!</p>
+                                </div>
+                                <? wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+                            </div>
+                            <div class="buttons">
+                                <div class="form-group">
+                                    <div>
+                                        <button name="wp-submit" type="submit" class="btn btn-default">Войти</button>
+                                    </div>
+                                </div>
+                                <div class="login">
+
+                                    <a class="forgot-pass" href="<?php echo wp_lostpassword_url( $redirect ); ?>">Забыли пароль?</a>
+                                    <div>
+                                        <button id="registration-btn" class="btn1 btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="#myModal">Регистрация</button>
+                                    </div>
                                 </div>
                             </div>
+                        </form>
 
-                        </div>
                         <p>Авторизоваться через социальные сети</p>
                         <ul class="icon-footer">
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/facebook.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta2.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk2.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube1.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/twitter2.png"></a></li>
+                            <?=get_ulogin_panel(0, false, true);?>
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/facebook.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/insta2.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/vk2.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/youtube1.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/twitter2.png"></a></li>-->
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -120,50 +132,55 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="form-horizontal">
-                        <div class="additional-data">
-                            <div class="form-group">
-                                <div>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Login">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <input type="password" class="form-control" id="inputEmail3" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <input type="email" class="form-control" id="inputPassword3" placeholder="Email">
-                                </div>
-                            </div>
-                            <img src="<?=get_site_url()?>/wp-content/themes/best-people/images/code.png">
-                        </div>
-                        <div class="buttons">
+                        <form name="registrationform" method="post">
                             <div class="additional-data">
-                                <div>
-                                    <button id="code" class="btn1 btn-default" type="submit">Код подтверждения</button>
+                                <div class="form-group">
+                                    <div>
+                                        <input name="username" type="text" class="form-control" id="inputEmail3" placeholder="Логин">
+                                    </div>
                                 </div>
-                                <a class="forgot-pass" href="#">Получить новый код</a>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <button type="submit" class="btn btn-default">Enter</button>
+                                <div class="form-group">
+                                    <div>
+                                        <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Пароль">
+                                    </div>
                                 </div>
+<!--                                <div class="form-group">-->
+<!--                                    <div>-->
+<!--                                        <input type="password" class="form-control" id="inputEmail3" placeholder="Повторите пароль">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="form-group">
+                                    <div>
+                                        <input name="email" type="email" class="form-control" id="inputPassword3" placeholder="Email">
+                                    </div>
+                                    <p class="wrong" style="display: none"></p>
+                                </div>
+                                <? wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+                                <!--                            <img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/code.png">-->
                             </div>
+                            <div class="buttons">
+                                <!--                            <div class="additional-data">-->
+                                <!--                                <div>-->
+                                <!--                                    <button id="code" class="btn1 btn-default" type="submit">Код подтверждения</button>-->
+                                <!--                                </div>-->
+                                <!--                                <a class="forgot-pass" href="#">Получить новый код</a>-->
+                                <!--                            </div>-->
+                                <div class="form-group">
+                                    <div>
+                                        <button type="submit" class="btn btn-default">Зарегистрироватся</button>
+                                    </div>
+                                </div>
 
-                        </div>
+                            </div>
+                        </form>
                         <p>Авторизоваться через социальные сети</p>
                         <ul class="icon-footer">
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/facebook.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta2.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk2.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube1.png"></a></li>
-                            <li><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/twitter2.png"></a></li>
+                            <?=get_ulogin_panel(0, false, true);?>
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/facebook.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/insta2.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/vk2.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/youtube1.png"></a></li>-->
+<!--                            <li><a href="#"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/twitter2.png"></a></li>-->
                         </ul>
                     </div>
                 </div>
@@ -175,9 +192,12 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?=get_site_url()?>/wp-content/themes/best-people/js/bootstrap.min.js"></script>
 <script src="<?=get_site_url()?>/wp-content/themes/best-people/js/owl.carousel.min.js"></script>
+<script src="<?=get_site_url()?>/wp-content/themes/best-people/js/moment-with-locales.min.js"></script>
+<script src="<?=get_site_url()?>/wp-content/themes/best-people/ajax-login-script.js"></script>
 <script>
     $(document).ready(function() {
         var owl = $(".top-carousel .owl-carousel");
@@ -274,9 +294,32 @@
         })
         $(".prev6").click(function(){
             owl.trigger('prev.owl.carousel', [1000]);
-        })
+        });
 
+
+        $('.dropdown').hover(
+            function () {
+                if ($(window).width() > 991) {
+                    $('.dropdown-menu').hide();
+                    $(this).children('ul').show();
+                    //$('.dropdown-menu').show();
+                }
+            }
+            ,
+            function () {
+                if ($(window).width() > 991) {
+                    $('.dropdown-menu').hide();
+                    $('.dropdown-menu').each(function (i, val) {
+                        //console.log( val );
+                        if ($(this).data('active') == true) {
+                            $(this).show();
+                        }
+                    });
+                }
+            }
+        );
     });
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>

@@ -14,20 +14,39 @@
         'class_submit' => 'hidden',
         'comment_notes_before' => '',
         'comment_notes_after' => '',
-        'comment_field' => '    <div class="col-md-12 col-sm-12 col-xs-12 comment-form">
+        'comment_field' => '
+                                <div class="col-md-12 col-sm-12 col-xs-12 comment-form">
+                                   
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-8">
+                                            <span class="wrong" style="display: none">Введите комментарий !</span>
+                                            <input type="text" name="comment" class="form-control" placeholder="Текст...">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-offset-3">
+                                            <button class="btn btn-default" role="button" type="submit">Отправить</button>
+                                         </div>
+                                    </div>
+                                     
+                                   
+                                </div>
+                                ',
+        'must_log_in' => '<div class="col-md-12 col-sm-12 col-xs-12 comment-form">
                                     <div class="col-md-8 col-sm-12">
                                         <p>
                                             Зарегистрируйтесь, и комментируйте статьи, получайте
                                             приглашения
                                             на клубные вечеринки, участвуйте в акциях от партнеров сайта.
-                                            Введите текст в текстовое поле и нажмите кнопку "Регистрация"
                                         </p>
                                     </div>
-                                    <input type="text" name="comment" class="form-control" placeholder="Текст...">
-                                    <div class="col-md-offset-3">
-                                        <button class="btn btn-default" role="button" type="submit">Отправить</button>
-                                    </div>
-                                </div>'
+                                </div>',
+        'fields' => array(
+            'author' => '',
+            'email' => '',
+            'url' => ''
+        )
 
     );
     ?>
@@ -40,17 +59,6 @@
         <nav>
             <ul class="pagination">
                 <? paginate_comments_links(array('prev_text' => 'prev', 'next_text' => 'next')); ?>
-<!--                <li><a href="#">1</a></li>-->
-<!--                <li><a href="#">2</a></li>-->
-<!--                <li><a href="#">3</a></li>-->
-<!--                <li><a href="#">4</a></li>-->
-<!--                <li><a href="#">5</a></li>-->
-<!--                <li><a href="#">...</a></li>-->
-<!--                <li>-->
-<!--                    <a href="#" aria-label="Next">-->
-<!--                        <span aria-hidden="true">next</span>-->
-<!--                    </a>-->
-<!--                </li>-->
             </ul>
         </nav>
     </div>
