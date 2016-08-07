@@ -58,7 +58,7 @@ class WP_usual_article_Widget extends WP_Widget
                     <?= get_the_post_thumbnail(null, 'full', array('class' => 'img-responsive')); ?>
                 </a>
                 <h2><? the_title(); ?></h2>
-                <p><? the_excerpt(); ?></p>
+                <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?=get_the_excerpt(); ?></p>
             </div>
             <?php
             $counter++;
@@ -125,7 +125,7 @@ class WP_4_small_articles_Widget extends WP_Widget
                     <?= get_the_post_thumbnail(null, 'full', array('class' => 'img-responsive')); ?>
                 </a>
                 <h3><? the_title(); ?></h3>
-                <p><? the_excerpt(); ?></p>
+                <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?=get_the_excerpt();?></p>
             </div>
             <?php
             $counter++;
@@ -550,7 +550,7 @@ class WP_4_small_articles_table_Widget extends WP_Widget
                     <?= get_the_post_thumbnail(null, 'medium', array('class' => 'img-responsive')); ?>
                 </a>
                 <h3><? the_title(); ?></h3>
-                <? the_excerpt(); ?>
+                <p class="clearfix visible-sm-block  visible-lg-block"><?=get_the_excerpt(); ?></p>
 <!--                <a href="--><?// the_permalink() ?><!--" class="col-md-3 clearfix visible-md-block visible-lg-block">-->
 <!--                    <img src="--><?//= get_site_url() ?><!--/wp-content/themes/best-people/images/next1.png">-->
 <!--                </a>-->
@@ -619,7 +619,7 @@ class WP_3_vertical_articles_Widget extends WP_Widget
                     <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl img-responsive')); ?>
                 </a>
                 <h4><? the_title(); ?></h4>
-                <p><? the_excerpt(); ?></p>
+                <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?=get_the_excerpt(); ?></p>
                 <a class="next col-md-3" href="#"></a>
             </div>
             <?php

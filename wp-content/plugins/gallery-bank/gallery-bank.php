@@ -4,7 +4,7 @@ Plugin Name: Gallery Bank Lite Edition
 Plugin URI: http://tech-banker.com
 Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
 Author: Tech Banker
-Version: 3.1.21
+Version: 3.1.24
 Author URI: http://tech-banker.com
 License: GPLv3 or later
 */

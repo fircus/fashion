@@ -373,14 +373,14 @@ if(!function_exists("backend_scripts_calls"))
 		wp_enqueue_script("jquery-ui-sortable");
 		wp_enqueue_script("jquery-ui-dialog");
 		wp_enqueue_script("farbtastic");
-		wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
+		wp_enqueue_script("img-liquid", plugins_url("/assets/js/img-liquid.js",dirname(__FILE__)));
 		wp_enqueue_script("plupload.full.min.js", plugins_url("/assets/js/plupload.full.min.js",dirname(__FILE__)), array("jquery-ui-widget","jquery-ui-progressbar"),false);
-		wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)));
+		wp_enqueue_script("jquery.data-tables.min.js", plugins_url("/assets/js/jquery.data-tables.min.js",dirname(__FILE__)));
 		wp_enqueue_script("jquery.validate.min.js", plugins_url("/assets/js/jquery.validate.min.js",dirname(__FILE__)));
 		wp_enqueue_script("jquery.ui.plupload.js", plugins_url("/assets/js/jquery.ui.plupload.js",dirname(__FILE__)));
-		wp_enqueue_script("jquery.Tooltip.js", plugins_url("/assets/js/jquery.Tooltip.js",dirname(__FILE__)));
+		wp_enqueue_script("jquery.tooltip.js", plugins_url("/assets/js/jquery.tooltip.js",dirname(__FILE__)));
 		wp_enqueue_script("bootstrap.js", plugins_url("/assets/js/bootstrap.js",dirname(__FILE__)));
-		wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
+		wp_enqueue_script("jquery.pretty-photo.js", plugins_url("/assets/js/jquery.pretty-photo.js",dirname(__FILE__)));
 		wp_enqueue_style("google-fonts-roboto", "http://fonts.googleapis.com/css?family=Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:regular|Roboto Condensed:300");
 	}
 }
@@ -391,8 +391,8 @@ if(!function_exists("frontend_plugin_js_scripts_gallery_bank"))
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("jquery.masonry.min.js", plugins_url("/assets/js/jquery.masonry.min.js",dirname(__FILE__)));
 		wp_enqueue_script("isotope.pkgd.js", plugins_url("/assets/js/isotope.pkgd.js",dirname(__FILE__)));
-		wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
-		wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
+		wp_enqueue_script("img-liquid", plugins_url("/assets/js/img-liquid.js",dirname(__FILE__)));
+		wp_enqueue_script("jquery.pretty-photo.js", plugins_url("/assets/js/jquery.pretty-photo.js",dirname(__FILE__)));
 	}
 }
 //--------------------------------------------------------------------------------------------------------------//
@@ -410,7 +410,7 @@ if(!function_exists("backend_css_calls"))
 		wp_enqueue_style("simple-line-icons.css", plugins_url("/assets/css/icons/icons.css",dirname(__FILE__)));
 		wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",dirname(__FILE__)));
 		wp_enqueue_style("gallery-bank.css", plugins_url("/assets/css/gallery-bank.css",dirname(__FILE__)));
-		wp_enqueue_style("prettyPhoto.css", plugins_url("/assets/css/prettyPhoto.css",dirname(__FILE__)));
+		wp_enqueue_style("pretty-photo.css", plugins_url("/assets/css/pretty-photo.css",dirname(__FILE__)));
 		wp_enqueue_style("premium-edition.css", plugins_url("/assets/css/premium-edition.css",dirname(__FILE__)));
 		wp_enqueue_style("responsive.css", plugins_url("/assets/css/responsive.css",dirname(__FILE__)));
 	}
@@ -420,7 +420,7 @@ if(!function_exists("frontend_plugin_css_scripts_gallery_bank"))
 	function frontend_plugin_css_scripts_gallery_bank()
 	{
 		wp_enqueue_style("gallery-bank.css", plugins_url("/assets/css/gallery-bank.css",dirname(__FILE__)));
-		wp_enqueue_style("prettyPhoto.css", plugins_url("/assets/css/prettyPhoto.css",dirname(__FILE__)));
+		wp_enqueue_style("pretty-photo.css", plugins_url("/assets/css/pretty-photo.css",dirname(__FILE__)));
 	}
 }
 
@@ -428,7 +428,7 @@ if(!function_exists("frontend_plugin_css_scripts_gallery_bank"))
 // REGISTER AJAX BASED FUNCTIONS TO BE CALLED ON ACTION TYPE AS PER WORDPRESS GUIDELINES
 //--------------------------------------------------------------------------------------------------------------//
 if (isset($_REQUEST["action"])) {
-	switch ($_REQUEST["action"]) {
+	switch (esc_attr($_REQUEST["action"])) {
 		case "add_new_album_library":
 			add_action("admin_init", "album_gallery_library");
 			if(!function_exists("album_gallery_library"))

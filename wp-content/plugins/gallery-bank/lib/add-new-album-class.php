@@ -126,14 +126,14 @@ else
 	}
 	if (isset($_REQUEST["param"]))
 	{
-		switch($_REQUEST["param"])
+		switch(esc_attr($_REQUEST["param"]))
 		{
 			case "add_new_dynamic_row_for_image":
-				$img_path = esc_attr($_REQUEST["img_path"]);
-				$img_name = esc_attr($_REQUEST["img_name"]);
-				$img_width = intval($_REQUEST["image_width"]);
-				$img_height = intval($_REQUEST["image_height"]);
-				$picid = intval($_REQUEST["picid"]);
+				$img_path = isset($_REQUEST["img_path"]) ? esc_attr($_REQUEST["img_path"]) : "";
+				$img_name = isset($_REQUEST["img_name"]) ? esc_attr($_REQUEST["img_name"]) : "";
+				$img_width = isset($_REQUEST["image_width"]) ? intval($_REQUEST["image_width"]) : 0;
+				$img_height = isset($_REQUEST["image_height"]) ? intval($_REQUEST["image_height"]) : 0;
+				$picid = isset($_REQUEST["picid"]) ? intval($_REQUEST["picid"]) : 0;
 				process_image_upload($img_path, $img_width, $img_height);
 				$column1 = "<input type=\"checkbox\" id=\"ux_grp_select_items_" . $picid . "\" name=\"ux_grp_select_items_" . $picid . "\" value=\"" . $picid . "\" />";
 				array_push($dynamicArray, $column1);
@@ -155,10 +155,10 @@ else
 
 			break;
 			case "add_pic":
-				$ux_albumid = intval($_REQUEST["album_id"]);
-				$ux_controlType = esc_attr($_REQUEST["controlType"]);
-				$ux_img_name = esc_attr(html_entity_decode($_REQUEST["imagename"]));
-				$img_gb_path = esc_attr($_REQUEST["img_gb_path"]);
+				$ux_albumid = isset($_REQUEST["album_id"]) ? intval($_REQUEST["album_id"]) : 0;
+				$ux_controlType = isset($_REQUEST["controlType"]) ? esc_attr($_REQUEST["controlType"]) : "";
+				$ux_img_name = isset($_REQUEST["imagename"]) ? esc_attr(html_entity_decode($_REQUEST["imagename"])) : "";
+				$img_gb_path = isset($_REQUEST["img_gb_path"]) ? esc_attr($_REQUEST["img_gb_path"]) : "";
 
 				if ($ux_controlType == "image")
 				{
@@ -193,10 +193,10 @@ else
 
 			break;
 			case "update_album":
-				$albumId = intval($_REQUEST["albumid"]);
-				$ux_edit_album_name1 = htmlspecialchars(esc_attr($_REQUEST["edit_album_name"]));
+				$albumId = isset($_REQUEST["albumid"]) ? intval($_REQUEST["albumid"]) : 0;
+				$ux_edit_album_name1 = isset($_REQUEST["edit_album_name"]) ? htmlspecialchars(esc_attr($_REQUEST["edit_album_name"])) : "";
 				$ux_edit_album_name = ($ux_edit_album_name1 == "") ? "Untitled Album" : $ux_edit_album_name1;
-				$ux_edit_description = htmlspecialchars($_REQUEST["uxEditDescription"]);
+				$ux_edit_description = isset($_REQUEST["uxEditDescription"]) ? htmlspecialchars($_REQUEST["uxEditDescription"]) : "";
 				$wpdb->query
 				(
 					$wpdb->prepare
@@ -210,7 +210,7 @@ else
 
 			break;
 			case "update_pic":
-				$album_data = json_decode(stripcslashes($_REQUEST["album_data"]),true);
+				$album_data = isset($_REQUEST["album_data"]) ? json_decode(stripcslashes($_REQUEST["album_data"]),true) : "";
 				foreach($album_data as $field)
 				{
 					if ($field[0] == "image")
@@ -269,8 +269,8 @@ else
 	   		break;
 			case "delete_pic":
 
-				$data_to_be_deleted = json_decode(stripslashes(html_entity_decode($_REQUEST["delete_array"])));
-				$albumId = intval($_REQUEST["albumid"]);
+				$data_to_be_deleted = isset($_REQUEST["delete_array"]) ? json_decode(stripslashes(html_entity_decode($_REQUEST["delete_array"]))) : "";
+				$albumId = isset($_REQUEST["albumid"]) ? intval($_REQUEST["albumid"]) : 0;
 				$query_data = implode(",",$data_to_be_deleted);
 				$wpdb->query
 				(
@@ -279,7 +279,7 @@ else
 
 			break;
 			case "Delete_album":
-				$album_id = intval($_REQUEST["album_id"]);
+				$album_id = isset($_REQUEST["album_id"]) ? intval($_REQUEST["album_id"]) : 0;
 				$wpdb->query
 				(
 					$wpdb->prepare
@@ -299,7 +299,7 @@ else
 
 			break;
 			case "gallery_plugin_updates":
-				$gallery_updates = intval($_REQUEST["gallery_updates"]);
+				$gallery_updates = isset($_REQUEST["gallery_updates"]) ? intval($_REQUEST["gallery_updates"]) : 0;
 				update_option("gallery-bank-automatic_update", $gallery_updates);
 
 			break;

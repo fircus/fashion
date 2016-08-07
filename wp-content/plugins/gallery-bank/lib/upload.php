@@ -20,7 +20,7 @@ if (!current_user_can($user_role_permission))
 }
 else
 {
-	if ((wp_verify_nonce($_REQUEST["_nonce"], "manage_uploading")) && ($_REQUEST["param"] == "upload_pic"))
+	if ((wp_verify_nonce(esc_attr($_REQUEST["_nonce"]), "manage_uploading")) && (esc_attr($_REQUEST["param"]) == "upload_pic"))
 	{
 		/**
 		 * upload.php
@@ -68,7 +68,7 @@ else
 
 		// Get a file name
 		if (isset($_REQUEST["name"])) {
-			$fileName = $_REQUEST["name"];
+			$fileName = esc_attr($_REQUEST["name"]);
 		} elseif (!empty($_FILES)) {
 			$fileName = $_FILES["file"]["name"];
 		} else {

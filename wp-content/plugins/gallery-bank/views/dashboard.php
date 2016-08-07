@@ -476,7 +476,7 @@
 				//noinspection JSUnresolvedVariable
 				jQuery.post(ajaxurl, "album_id="+album_id+"&param=Delete_album&action=add_new_album_library", function()
 				{
-					var check_page = "<?php echo $_REQUEST["page"]; ?>";
+					var check_page = "<?php echo isset($_GET["page"]) ? esc_attr($_GET["page"]) : ""; ?>";
 					window.location.href = "admin.php?page="+check_page;
 				});
 			}

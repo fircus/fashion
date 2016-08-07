@@ -123,7 +123,7 @@ if(isset($album))
 	            margin-bottom: <?php echo $margin_btw_cover_thumbnails; ?>px;
 	        }
 
-	        .layout-controls > a#<?php echo $_REQUEST["order_id"];?>
+	        .layout-controls > a#<?php echo isset($_REQUEST["order_id"]) ? intval($_REQUEST["order_id"]) : 0;?>
 	        {
 	        	color:#000000;font-weight:bold;
 	        }

@@ -36,7 +36,7 @@
 
 .custom-message.green {
 	display: block;
-	background: url(../images/icons/icon-succes.png) no-repeat 1px 8px #EBF9E2;
+	background: url(../images/icons/icon-success.png) no-repeat 1px 8px #EBF9E2;
 	border: 1px solid #BEE4A5;
 	color: #6aa500;
 }

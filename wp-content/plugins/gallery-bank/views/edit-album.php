@@ -18,7 +18,7 @@
 	else
 	{
 		$upload_photos = wp_create_nonce("manage_uploading");
-		$album_id = intval($_REQUEST["album_id"]);
+		$album_id = isset($_REQUEST["album_id"]) ? intval($_REQUEST["album_id"]) : 0;
 		$last_albums_id = $wpdb->get_var
 		(
 			$wpdb->prepare
@@ -456,19 +456,21 @@
 		    jQuery("#edit_album").validate
 		    ({
 		        submitHandler: function ()
-				{
+						{
 		            jQuery("#update_album_success_message").css("display", "block");
 		            jQuery("body,html").animate
 		            ({
 		                scrollTop: jQuery("body,html").position().top
 					}, "slow");
-	            	var albumid = jQuery("#ux_hidden_album_id").val();
-					jQuery.post(ajaxurl,"albumid=" + albumid + "&delete_array=" + JSON.stringify(delete_array) +"&param=delete_pic&action=add_new_album_library", function ()
+					var albumid = jQuery("#ux_hidden_album_id").val();
+					if(delete_array.length > 0)
 					{
+						jQuery.post(ajaxurl,"albumid=" + albumid + "&delete_array=" + JSON.stringify(delete_array) +"&param=delete_pic&action=add_new_album_library", function (data)
+						{
+						});
+					}
 
-					});
-
-	            	var uxEditDescription = "";
+					var uxEditDescription = "";
 
 		            <?php
 			    	if(class_exists("ckeditor_wordpress"))

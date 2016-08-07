@@ -19,8 +19,8 @@
 	else
 	{
 		$unique_id = rand(100, 10000);
-		$album_id = intval($_REQUEST["album_id"]);
-		$img_in_row = intval($_REQUEST["row"]);
+		$album_id = isset($_REQUEST["album_id"]) ? intval($_REQUEST["album_id"]) : 0;
+		$img_in_row = isset($_REQUEST["row"]) ? intval($_REQUEST["row"]) : 0;
 		if (isset($_REQUEST["order_id"])) {
 		    switch (esc_attr($_REQUEST["order_id"])) {
 		        case "unsort":
@@ -165,7 +165,7 @@
 		            margin-right: <?php echo $margin_btw_thumbnails;?>px;
 		            margin-bottom: <?php echo $margin_btw_thumbnails;?>px;
 		        }
-		        .layout-controls > a#<?php echo $_REQUEST["order_id"];?>
+		        .layout-controls > a#<?php echo esc_attr($_REQUEST["order_id"]);?>
 		        {
 		            color: #000000 !important;
 		            font-weight: bold !important;

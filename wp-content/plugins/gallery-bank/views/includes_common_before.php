@@ -9,7 +9,7 @@ if (isset($_REQUEST["row"])) {
     $img_in_row = 3;
 }
 
-$album_id = intval($_REQUEST["album_id"]);
+$album_id = isset($_REQUEST["album_id"]) ? intval($_REQUEST["album_id"]) : 0;
 $album = $wpdb->get_var
 (
     $wpdb->prepare
@@ -170,7 +170,7 @@ if (count($album_css) != 0) {
             }
             else if($gallery_type == "masonry")
             {
-            
+
                 ?> width: <?php echo ($thumbnails_width + ($margin_btw_thumbnails * 2) + ($thumbnails_border_size * 2)) * $img_in_row ;?>px !important;
                 <?php
             }
@@ -196,7 +196,7 @@ if (count($album_css) != 0) {
 	.pp_pic_holder.pp_default {
 	    background-color: #ffffff;
     }
-    
+
     div.pp_overlay {
         background-color: <?php echo $lightbox_overlay_bg_color;?> !important;
         opacity: <?php echo $lightbox_overlay_opacity;?> !important;

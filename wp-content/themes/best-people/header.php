@@ -39,10 +39,10 @@
                     <li class="clearfix visible-xs-block visible-sm-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta1.png"></a></li>
                 </ul>
             </div>
-            <div class="logo col-sm-4 clearfix visible-sm-block"><a href="index.html"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/logo.png"></a></div>
+            <div class="logo col-sm-4 clearfix visible-sm-block"><a href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/logo.png"></a></div>
             <div class="col-md-4 col-sm-2 col-md-offset-4 clearfix visible-md-block visible-lg-block visible-sm-block">
                 <ul class="icon-control">
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="index.html"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/home.png"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="/"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/home.png"></a></li>
                     <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter.png"></a></li>
                     <li class="clearfix visible-md-block visible-lg-block"><a id="search_link" href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/glass.png"></a></li>
 
@@ -57,8 +57,15 @@
                     </li>
 
                     <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
-                    <li class="enter clearfix visible-sm-block visible-xs-block"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                        </button></li>
+                    <li class="enter clearfix visible-sm-block visible-xs-block">
+                        <? if(is_user_logged_in()) :?>
+                            <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
+                                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                            </a>
+                        <? else:?>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></button>
+                        <? endif;?>
+                    </li>
                 </ul>
             </div>
             <nav class="navbar navbar-default col-sm-2 col-xs-2 col-md-12">
@@ -74,8 +81,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="col-md-4">
-                        <form class="form-inline form1 clearfix visible-sm-block visible-xs-block">
-                            <input class="form-control" type="search" name="q" placeholder="Search...">
+                        <form class="form-inline form1 clearfix visible-sm-block visible-xs-block" method="get" action="<?= esc_url( home_url( '/' ) ); ?>">
+                            <input class="form-control" type="search" name="s" placeholder="Search..." value="<?=get_search_query(); ?>">
                             <button class="btn btn-default" type="submit"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/searchmenu.png"></button>
                         </form>
                         <ul class="nav navbar-nav navbar-left">
@@ -129,8 +136,15 @@
             <div class="col-xs-5 clearfix visible-xs-block">
                 <ul class="icon-control">
                     <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
-                    <li class=" enter clearfix visible-xs-block"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                        </button></li></li>
+                    <li class=" enter clearfix visible-xs-block">
+                        <? if(is_user_logged_in()) :?>
+                            <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
+                                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                            </a>
+                        <? else:?>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></button>
+                        <? endif;?>
+                    </li>
                 </ul>
             </div>
         </div>

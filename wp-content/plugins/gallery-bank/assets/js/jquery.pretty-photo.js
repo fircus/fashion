@@ -1,19 +1,19 @@
 /* ------------------------------------------------------------------------
  prettyPhoto v3.1.5
  � Copyright, Stephane Caron
- http://www.no-margin-for-errors.com
+ https://www.no-margin-for-errors.com
 
 
 = ============================ Released under =============================
 
  GPLV2 license
- http://www.gnu.org/licenses/gpl-2.0.html
+ https://www.gnu.org/licenses/gpl-2.0.html
 
  You are free to use prettyPhoto in commercial projects as long as the
  copyright header is left intact.
 
  ============================ More information ============================
- http://www.no-margin-for-errors.com/projects/prettyPhoto/
+ https://www.no-margin-for-errors.com/projects/prettyPhoto/
 
 
  ============================== Description ===============================
@@ -22,7 +22,7 @@
  it also add support for videos, flash, YouTube, iFrame. It's a full blown
  media modal box.
 
- Please refer to http://www.no-margin-for-errors.com/projects/prettyPhoto/
+ Please refer to https://www.no-margin-for-errors.com/projects/prettyPhoto/
  for all the details on how to use.
  ------------------------------------------------------------------------- */
 
@@ -390,11 +390,11 @@
 							</div>',
 						image_markup: '<img id="fullResImage" src="{path}" />',
 						flash_markup: '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{width}" height="{height}"><param name="wmode" value="{wmode}" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="{path}" /><embed src="{path}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="{width}" height="{height}" wmode="{wmode}"></embed></object>',
-						quicktime_markup: '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"><param name="src" value="{path}"><param name="autoplay" value="{autoplay}"><param name="type" value="video/quicktime"><embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>',
+						quicktime_markup: '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"><param name="src" value="{path}"><param name="autoplay" value="{autoplay}"><param name="type" value="video/quicktime"><embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="https://www.apple.com/quicktime/download/"></embed></object>',
 						iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no"></iframe>',
 						inline_markup: '<div class="pp_inline">{content}</div>',
 						custom_markup: "",
-						social_tools: '<div class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div><div class="facebook"><iframe src="//www.facebook.com/plugins/like.php?locale=en_US&href={location_href}&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:23px;" allowTransparency="true"></iframe></div>' /* html or false to disable */
+						social_tools: '<div class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script></div><div class="facebook"><iframe src="//www.facebook.com/plugins/like.php?locale=en_US&href={location_href}&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:23px;" allowTransparency="true"></iframe></div>' /* html or false to disable */
 				}, s);
 				var o = this, u = false, a, f, l, c, h, p, d = e(window).height(), v = e(window).width(), m;
 				doresize = true, scroll_pos = T();
@@ -531,7 +531,7 @@
 														if (movie_id.indexOf("&") > 0)
 																movie_id = movie_id.substr(0, movie_id.indexOf("&"))
 												}
-												movie = "http://www.youtube.com/embed/" + movie_id;
+												movie = "https://www.youtube.com/embed/" + movie_id;
 												i("rel", pp_images[set_position]) ? movie += "?rel=" + i("rel", pp_images[set_position]) : movie += "?rel=1";
 												if (settings.autoplay)
 														movie += "&autoplay=1";
@@ -542,7 +542,7 @@
 												movie_id = pp_images[set_position];
 												var t = /http(s?):\/\/(www\.)?vimeo.com\/(\d+)/;
 												var n = movie_id.match(t);
-												movie = "http://player.vimeo.com/video/" + n[3] + "?title=0&byline=0&portrait=0";
+												movie = "https://player.vimeo.com/video/" + n[3] + "?title=0&byline=0&portrait=0";
 												if (settings.autoplay)
 														movie += "&autoplay=1;";
 												vimeo_width = a["width"] + "/embed/?moog_width=" + a["width"];

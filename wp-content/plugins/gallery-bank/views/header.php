@@ -183,14 +183,18 @@ if(!function_exists("gallery_get_minisize"))
 		</div>
 	</div>
 </div>
+<?php
+if(isset($_GET["page"]))
+{
+?>
 <script>
 jQuery(document).ready(function()
 {
-	jQuery(".nav-tab-wrapper > a#<?php echo $_REQUEST["page"];?>").addClass("nav-tab-active");
+	jQuery(".nav-tab-wrapper > a#<?php echo esc_attr($_GET["page"]);?>").addClass("nav-tab-active");
 });
 </script>
-<?php
-switch($_REQUEST["page"])
+	<?php
+switch(esc_attr($_GET["page"]))
 {
 	case "gallery_bank":
 		$page = "Dashboard";
@@ -313,7 +317,7 @@ switch ($gb_role)
 		<?php
 	break;
 }
-if($_REQUEST["page"] != "gallery_bank_feature_request")
+if(esc_attr($_GET["page"]) != "gallery_bank_feature_request")
 {
 	?>
 	<div class="custom-message green" style="display: block;margin-top:30px">
@@ -370,5 +374,6 @@ function is_dir_empty($dir)
 		}
 	}
 	return TRUE;
+}
 }
 ?>

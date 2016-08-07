@@ -45,51 +45,6 @@
         <?php if ( is_active_sidebar( '7-row' ) ) : ?>
             <?php dynamic_sidebar( '7-row' ); ?>
         <?php endif; ?>
-<!--        <h1>[Culture]</h1>-->
-<!--        <div class="col-md-6 col-sm-12">-->
-<!--            <a href="#"><img class="img-responsive" src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/depp.jpg"></a>-->
-<!--            <h3>В интервью Джонни рассказал всю правду</h3>-->
-<!--            <p>В интервью Джонни рассказал-->
-<!--            всю правду о главном, но мы ему-->
-<!--            не поверили. В интервью Джонни-->
-<!--            рассказал всю правдуВ интервью-->
-<!--            Джонни рассказалвсю правду о-->
-<!--            главном, но мы емуне поверили </p>-->
-<!--            <a href="#" class="col-md-3 clearfix visible-md-block visible-lg-block"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/next1.png"></a>-->
-<!--        </div>-->
-<!--        <div class="col-md-6 col-sm-12">-->
-<!--            <a href="#"><img class="img-responsive" src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/music_girl.jpg"></a>-->
-<!--            <h3>В интервью Джонни рассказал всю правду</h3>-->
-<!--            <p>В интервью Джонни рассказал-->
-<!--            всю правду о главном, но мы ему-->
-<!--            не поверили. В интервью Джонни-->
-<!--            рассказал всю правдуВ интервью-->
-<!--            Джонни рассказалвсю правду о-->
-<!--            главном, но мы емуне поверили </p>-->
-<!--            <a href="#" class="col-md-3 clearfix visible-md-block visible-lg-block"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/next1.png"></a>-->
-<!--        </div>-->
-<!--        <div class="col-md-6 col-sm-12">-->
-<!--            <a href="#"><img class="img-responsive" src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/delon.jpg"></a>-->
-<!--            <h3>В интервью Джонни рассказал всю правду</h3>-->
-<!--            <p>В интервью Джонни рассказал-->
-<!--            всю правду о главном, но мы ему-->
-<!--            не поверили. В интервью Джонни-->
-<!--            рассказал всю правдуВ интервью-->
-<!--            Джонни рассказалвсю правду о-->
-<!--            главном, но мы емуне поверили </p>-->
-<!--            <a href="#" class="col-md-3 clearfix visible-md-block visible-lg-block"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/next1.png"></a>-->
-<!--        </div>-->
-<!--        <div class="col-md-6 col-sm-12">-->
-<!--            <a href="#"><img class="img-responsive" src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/lourens.jpg"></a>-->
-<!--            <h3>В интервью Джонни рассказал всю правду</h3>-->
-<!--            <p>В интервью Джонни рассказал-->
-<!--            всю правду о главном, но мы ему-->
-<!--            не поверили. В интервью Джонни-->
-<!--            рассказал всю правдуВ интервью-->
-<!--            Джонни рассказалвсю правду о-->
-<!--            главном, но мы емуне поверили </p>-->
-<!--            <a href="#" class="col-md-3 clearfix visible-md-block visible-lg-block"><img src="--><?//=get_site_url()?><!--/wp-content/themes/best-people/images/next1.png"></a>-->
-<!--        </div>-->
     </div>
     <div class="row block music clearfix visible-md-block visible-lg-block">
         <?php if ( is_active_sidebar( '8-row' ) ) : ?>

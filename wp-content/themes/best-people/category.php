@@ -4,6 +4,7 @@
 <? $tag_list = get_tags(); ?>
 
 <div class="main1">
+
     <div class="forms col-md-4 clearfix visible-md-block visible-lg-block">
         <div class="col-md-6">
             <label class="label1" for="selectstyle">Тэг</label>
@@ -65,42 +66,48 @@
                 </div>
             </div>
             <? endwhile;?>
-            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
-                <nav class="clearfix visible-sm-block visible-xs-block">
-                    <ul class="pagination">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">...</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+<!--            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">-->
+<!--                <nav class="clearfix visible-sm-block visible-xs-block">-->
+<!--                    <ul class="pagination">-->
+<!--                        <li><a href="#">1</a></li>-->
+<!--                        <li><a href="#">2</a></li>-->
+<!--                        <li><a href="#">3</a></li>-->
+<!--                        <li><a href="#">4</a></li>-->
+<!--                        <li><a href="#">5</a></li>-->
+<!--                        <li><a href="#">...</a></li>-->
+<!--                        <li>-->
+<!--                            <a href="#" aria-label="Next">-->
+<!--                                <span aria-hidden="true">next</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
         </div>
 
         <? get_sidebar()?>
 
     </div>
-    <div class="col-sm-12 block music_sm clearfix visible-sm-block">
-        <?php if (is_active_sidebar('1-row-category')) : ?>
-            <?php dynamic_sidebar('1-row-category'); ?>
-        <?php endif; ?>
+    <div class="row">
+        <div class="col-sm-12 block music_sm clearfix visible-sm-block">
+            <?php if (is_active_sidebar('1-row-category')) : ?>
+                <?php dynamic_sidebar('1-row-category'); ?>
+            <?php endif; ?>
+        </div>
     </div>
-    <div class="col-md-12 music clearfix visible-md-block visible-lg-block">
-        <?php if (is_active_sidebar('1-row-category')) : ?>
-            <?php dynamic_sidebar('1-row-category'); ?>
-        <?php endif; ?>
+    <div class="row">
+        <div class="col-md-12 music clearfix visible-md-block visible-lg-block">
+            <?php if (is_active_sidebar('1-row-category')) : ?>
+                <?php dynamic_sidebar('1-row-category'); ?>
+            <?php endif; ?>
+        </div>
     </div>
-    <div class="row block lifestyle">
-        <?php if (is_active_sidebar('2-row-category')) : ?>
-            <?php dynamic_sidebar('2-row-category'); ?>
-        <?php endif; ?>
+    <div class="row block lifestyle clearfix">
+        <div class="col-md-12">
+            <?php if (is_active_sidebar('2-row-category')) : ?>
+                <?php dynamic_sidebar('2-row-category'); ?>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
 <?php get_footer(); ?>
