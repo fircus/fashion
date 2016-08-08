@@ -190,6 +190,7 @@ class WP_top_carousel_Widget extends WP_Widget
                     <div class="item">
                         <a href="<? the_permalink() ?>">
                             <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl')); ?>
+                            <span class="top-carousel-text"><? the_title()?></span>
                         </a>
                     </div>
                     <?php

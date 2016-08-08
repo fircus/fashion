@@ -3081,3 +3081,14 @@ img {
     left: -10px;
     color: #999999;
 }
+
+.owl-carousel .item .top-carousel-text{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: #CDCDCD;
+    font-family: DroidSerif Bold;
+}
