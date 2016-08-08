@@ -2,10 +2,11 @@
 <div class="main1">
     <? if (have_posts()): ?>
         <? while (have_posts()) : the_post(); ?>
+            <? $categories = get_the_category();?>
             <div class="col-md-12 articles">
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="col-md-12 article">
-                        <p class="p2"><? the_date('d.m.Y') ?><a href="<?=get_category_link(get_the_category()[0]->cat_ID);?>"><span>[</span><?=get_the_category()[0]->name?><span>]</span></a>
+                        <p class="p2"><? the_date('d.m.Y') ?><a href="<?=get_category_link($categories[0]->cat_ID);?>"><span>[</span><?=$categories[0]->name?><span>]</span></a>
                         </p>
                         <h2><? the_title(); ?></h2>
                         <? the_content(); ?>

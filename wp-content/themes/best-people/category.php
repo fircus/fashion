@@ -3,6 +3,8 @@
 <? $filterTag = isset($_GET['tag']) ? $_GET['tag'] : '';?>
 <? $tag_list = get_tags(); ?>
 
+
+
 <div class="main1">
 
     <div class="forms col-md-4 clearfix visible-md-block visible-lg-block">
@@ -50,6 +52,7 @@
                 query_posts('category__in='.get_query_var('cat').$dateQuery.$tagQuery);
             ?>
             <? while (have_posts()) : the_post(); ?>
+                <? $categories = get_the_category();?>
                 <div class="category col-md-12 col-sm-12">
                 <div class="col-md-8 col-xs-12">
                     <a href="<? the_permalink()?>">
@@ -58,7 +61,7 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <p class="p1"><? the_time('d.m.Y') ?><span class="red"><br class="clearfix visible-md-block visible-lg-block">
-				<a class="category1" href="<?=get_category_link(get_the_category()[0]->cat_ID);?>"><span>[</span><?=get_the_category()[0]->name?><span>]</span></a></p>
+				    <a class="category1" href="<?=get_category_link($categories[0]->cat_ID);?>"><span>[</span><?=$categories[0]->name?><span>]</span></a></p>
                     <h3><? the_title(); ?></h3>
                     <p class="clearfix visible-sm-block visible-md-block visible-lg-block">
                         <?= get_the_excerpt()?>

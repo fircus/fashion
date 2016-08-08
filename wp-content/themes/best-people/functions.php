@@ -147,45 +147,31 @@ class WP_top_carousel_Widget extends WP_Widget
     public function update($new_instance, $old_instance)
     {
         $instance = array();
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['cat'] = strip_tags($new_instance['cat']);
         return $instance;
     }
 
     public function form($instance)
     {
-        $categories = get_categories();
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Имя виджета</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
-                   value="<?php echo $instance['title']; ?>"/>
+            Будет выбран один пост с каждой категории
         </p>
-        <p>
-            <label for="<?= $this->get_field_id('cat') ?>">Выберите рубрику</label> <br>
-            <select name="<?= $this->get_field_name('cat') ?>" id="<?= $this->get_field_id('cat') ?>">
-                <?
-                foreach ($categories as $link_cat) {
-                    echo '<option value="' . intval($link_cat->term_id) . '"'
-                        . selected($instance['cat'], $link_cat->term_id, false)
-                        . '>' . $link_cat->name . "</option>\n";
-                }
-                ?>
-            </select>
-        </p>
+
         <?
     }
 
     public function widget($args, $instance)
     {
-        $popular = new WP_Query('order_by=comment_count&posts_per_page=2&cat=' . $instance['cat']);
+        $popular = new WP_Query('order_by=comment_count');
         $counter = 0;
+        $used_categories = array();
         ?>
         <div class="col col-md-9 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block top-carousel">
             <div class="owl-carousel owl-theme">
                 <?php
                 if (have_posts()) : while ($popular->have_posts()) : $popular->the_post();
+                    $categories = get_the_category();
+                    if(in_array($categories[0]->cat_ID, $used_categories)) continue;
                     ?>
                     <div class="item">
                         <a href="<? the_permalink() ?>">
@@ -195,6 +181,7 @@ class WP_top_carousel_Widget extends WP_Widget
                     </div>
                     <?php
                     $counter++;
+                    $used_categories[] = $categories[0]->cat_ID;
                 endwhile; endif;
                 ?>
             </div>
@@ -203,7 +190,6 @@ class WP_top_carousel_Widget extends WP_Widget
                 <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
             </div>
         </div>
-
         <?php
     }
 }
