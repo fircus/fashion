@@ -122,6 +122,7 @@ header .navbar li a {
     font-size: 14px;
     font-family: Lovelo;
     color: #999999 !important;
+    text-transform: uppercase;
 }
 
 header .navbar .active a {
