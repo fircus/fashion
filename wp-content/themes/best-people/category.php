@@ -49,7 +49,7 @@
                 } else {
                     $tagQuery = '';
                 }
-                query_posts('category__in='.get_query_var('cat').$dateQuery.$tagQuery);
+                query_posts('category__in='.get_query_var('cat').$dateQuery.$tagQuery.'&posts_per_page=10&paged='.( get_query_var('paged') ? get_query_var('paged') : 1 ));
             ?>
             <? while (have_posts()) : the_post(); ?>
                 <? $categories = get_the_category();?>
@@ -69,23 +69,13 @@
                 </div>
             </div>
             <? endwhile;?>
-<!--            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">-->
-<!--                <nav class="clearfix visible-sm-block visible-xs-block">-->
-<!--                    <ul class="pagination">-->
-<!--                        <li><a href="#">1</a></li>-->
-<!--                        <li><a href="#">2</a></li>-->
-<!--                        <li><a href="#">3</a></li>-->
-<!--                        <li><a href="#">4</a></li>-->
-<!--                        <li><a href="#">5</a></li>-->
-<!--                        <li><a href="#">...</a></li>-->
-<!--                        <li>-->
-<!--                            <a href="#" aria-label="Next">-->
-<!--                                <span aria-hidden="true">next</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
-<!--            </div>-->
+            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                <nav class="clearfix">
+                    <ul class="pagination">
+                        <?=paginate_links(); ?>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
         <? get_sidebar()?>

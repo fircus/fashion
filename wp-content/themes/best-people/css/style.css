@@ -3097,3 +3097,10 @@ img {
 .top-right-banner img{
     max-width: 100%;
 }
+
+.pagination>li>span{
+    border: none;
+}
+.pagination>li>span:hover{
+    background: none;
+}
