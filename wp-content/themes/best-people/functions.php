@@ -147,22 +147,34 @@ class WP_top_carousel_Widget extends WP_Widget
     public function update($new_instance, $old_instance)
     {
         $instance = array();
+        $instance['category_list'] = $new_instance['category_list'];
         return $instance;
     }
 
     public function form($instance)
     {
+        $categories = get_categories();
         ?>
         <p>
-            Будет выбран один пост с каждой категории
+            Выберите категории
         </p>
-
         <?
+        foreach($categories as $category):
+        ?>
+            <label>
+                <input type="checkbox" name="<?= $this->get_field_name('category_list'); ?>[]" value="<?=$category->cat_ID?>" <?=in_array($category->cat_ID, $instance['category_list']) ? 'checked' : '' ?> > <?=$category->name?>
+            </label>
+            <br>
+        <?
+        endforeach;
     }
 
     public function widget($args, $instance)
     {
-        $popular = new WP_Query('order_by=comment_count');
+        $popular = new WP_Query(array(
+            'category__in' => $instance['category_list'],
+            'orderBy' => 'date'
+        ));
         $counter = 0;
         $used_categories = array();
         ?>
