@@ -4,8 +4,10 @@
         <?php if ( is_active_sidebar( '1-row' ) ) : ?>
             <?php dynamic_sidebar( '1-row' ); ?>
         <?php endif; ?>
-        <div class="col-md-3 clearfix visible-md-block clearfix visible-lg-block">
-            <a href="#"><img class="top-right img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/banner_top_right.jpg"></a>
+        <div class="col-md-3 clearfix visible-md-block clearfix visible-lg-block top-right-banner">
+            <?php if ( is_active_sidebar( '1-row-banner' ) ) : ?>
+                <?php dynamic_sidebar( '1-row-banner' ); ?>
+            <?php endif; ?>
         </div>
     </div>
     <div class="row people block">

@@ -777,6 +777,14 @@ register_sidebar(array(
     'before_title' => '',
     'after_title' => '',
 ));
+register_sidebar(array(
+    'name' => __('1-й ряд баннер', 'twentyten'),
+    'id' => '1-row-banner',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+));
 
 // стандартный вывод комментариев
 function custom_comment($comment, $args, $depth) {

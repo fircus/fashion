@@ -212,9 +212,9 @@
         var owl = $(".top-carousel .owl-carousel");
         owl.owlCarousel({
             items : 1,
-            loop: true
-            //lazyLoad: true,
-            //nav : true
+            loop: true,
+            dots: false
+
         });
         // Custom Navigation Events
         $(".top-carousel .next").click(function(){
@@ -233,8 +233,7 @@
         owl.owlCarousel({
             items : 1,
             loop: true,
-            //lazyLoad: true,
-            //nav : true
+            dots: false
         });
         // Custom Navigation Events
         $(".big-carousel .next").click(function(){
@@ -253,8 +252,7 @@
         owl.owlCarousel({
             items : 3,
             loop: true,
-            //lazyLoad: true,
-            //nav : true
+            dots: false
         });
         // Custom Navigation Events
         $(".small-carousel .next").click(function(){
@@ -273,8 +271,7 @@
         owl.owlCarousel({
             items : 2,
             loop: true,
-            //lazyLoad: true,
-            //nav : true
+            dots: false
         });
         // Custom Navigation Events
         $(".next5").click(function(){
@@ -293,8 +290,7 @@
         owl.owlCarousel({
             items : 2,
             loop: true,
-            //lazyLoad: true,
-            //nav : true
+            dots: false
         });
         // Custom Navigation Events
         $(".next6").click(function(){
