@@ -750,6 +750,10 @@ p {
     color: #999999;
 }
 
+.pagination-nav{
+    text-align: center;
+}
+
 .pagination {
     margin-bottom: 0px;
     margin-top: 40px

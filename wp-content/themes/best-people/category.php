@@ -70,7 +70,7 @@
             </div>
             <? endwhile;?>
             <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
-                <nav class="clearfix">
+                <nav class="pagination-nav clearfix">
                     <ul class="pagination">
                         <?=paginate_links(); ?>
                     </ul>
