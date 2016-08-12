@@ -328,7 +328,7 @@ class WP_small_carousel_Widget extends WP_Widget
         $popular = new WP_Query('order_by=comment_count&posts_per_page=4&cat=' . $instance['cat']);
         $counter = 0;
         ?>
-        <h1><?= $instance['title'] ?></h1>
+        <h1>[<?= $instance['title'] ?>]</h1>
         <div class="col2 col-md-12 small-carousel">
             <div class="owl-carousel owl-theme">
                 <?php

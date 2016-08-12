@@ -53,30 +53,16 @@ a {
     box-shadow: none;
 }
 
-#search_link {
-    background-image: url("../images/glass.png");
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 20px;
-}
-
-#search_link:hover,
-#search_link:focus,
-#search_link:active {
-    background-color: #FFFFFF;
-    background-image: url('../images/glass_black.png');
-    background-repeat: no-repeat;
-}
 
 .icon-networks li {
     float: left;
-    margin-right: 30px;
+    margin-right: 18px;
 }
 
 .icon-control li {
     float: left;
     display: inline;
-    margin-right: 24px;
+    margin-right: 15px;
 }
 
 header .navbar {
@@ -2935,8 +2921,8 @@ footer .dropdown-menu li a:hover {
 @media (min-width: 1200px) {
     .navbar-brand img {
         position: relative;
-        bottom: 79px;
-        margin-left: 4px;
+        bottom: 81px;
+        margin-left: 1px;
     }
 
     header .navbar-right li {
@@ -3070,12 +3056,17 @@ img {
 }
 
 .logout-btn {
-    background: none;
+    background: none!important;
+    margin-top: -8px;
 }
 
 .logout-btn:focus, .logout-btn:hover, .logout-btn:active {
     border: transparent;
     outline: none;
+}
+
+header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn:active span{
+    color: #000000;
 }
 
 .logout-btn .glyphicon {
@@ -3103,4 +3094,283 @@ img {
 }
 .pagination>li>span:hover{
     background: none;
+}
+
+.icon-networks {
+    margin-left: 45px;
+    margin-top: 55px;
+    padding-bottom: 30px;
+}
+.icon-networks li a{
+    background-image: url("../images/sprite.png");
+    display: block;
+    width: 30px;
+    height: 25px;
+}
+.icon-networks li:first-child a {
+    background-position: 343px -8px;
+}
+.icon-networks li:nth-child(2) a {
+    background-position: 300px -8px;
+}
+.icon-networks li:nth-child(3) a {
+    background-position: 253px -8px;
+}
+.icon-networks li:nth-child(4) a {
+    background-position: 203px -8px;
+}
+.icon-networks li a:hover{
+    background-image: url("../images/sprite.png");
+    display: block;
+    width: 30px;
+    height: 25px;
+}
+.icon-networks li:first-child a:hover {
+    background-position: 343px -43px;
+}
+.icon-networks li:nth-child(2) a:hover {
+    background-position: 300px -45px;
+}
+.icon-networks li:nth-child(3) a:hover {
+    background-position: 253px -47px;
+}
+.icon-networks li:nth-child(4) a:hover {
+    background-position: 203px -47px;
+}
+.icon-control li a{
+    background-image: url("../images/sprite.png");
+    display: block;
+    width: 30px;
+    height: 25px;
+}
+.icon-control li:first-child a {
+    background-position: 505px -8px;
+}
+.icon-control li:nth-child(2) a {
+    background-position: 468px -8px;
+}
+.icon-control li:nth-child(3) a {
+    background-position: 430px -9px;
+}
+.icon-control li a:hover{
+    background-image: url("../images/sprite.png");
+    display: block;
+    width: 30px;
+    height: 25px;
+}
+.icon-control li:first-child a:hover {
+    background-position: 505px -45px;
+}
+.icon-control li:nth-child(2) a:hover {
+    background-position: 468px -46px;
+}
+.icon-control li:nth-child(3) a:hover,
+.icon-control li:nth-child(3) a:focus,
+.icon-control li:nth-child(3) a:active {
+    background-position: 426px -45px;
+}
+.icon-control {
+    margin-left: 22%;
+    margin-top: 55px;
+}
+
+.big-carousel .customNavigation .prev {
+    bottom: 42%;
+    left: 3%;
+    position: absolute;
+    z-index: 1;
+}
+.big-carousel .customNavigation .next {
+    bottom: 42%;
+    float: right;
+    position: absolute;
+    right: 3%;
+    z-index: 1;
+}
+
+.log-out{
+    background: none;
+}
+
+footer .navbar li {
+    margin-right: 3%;
+}
+.icon-footer li{
+    list-style: none;
+    margin-right: 10%;
+}
+.icon-footer li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/sprite3.png);
+}
+.icon-footer li:first-child a {
+    background-position: 0 76px;
+}
+.icon-footer li:nth-child(2) a {
+    background-position: 238px 76px;
+}
+.icon-footer li:nth-child(3) a {
+    background-position: 170px 76px;
+}
+.icon-footer li:nth-child(4) a {
+    background-position: 103px 76px;
+}
+.icon-footer li:nth-child(5) a {
+    background-position: 37px 76px;
+}
+.icon-footer li a:hover {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/sprite3.png);
+}
+.icon-footer li:first-child a:hover {
+    background-position: 0 39px;
+}
+.icon-footer li:nth-child(2) a:hover {
+    background-position: 238px 38px;
+}
+.icon-footer li:nth-child(3) a:hover {
+    background-position: 170px 42px;
+}
+.icon-footer li:nth-child(4) a:hover {
+    background-position: 103px 41px;
+}
+.icon-footer li:nth-child(5) a:hover {
+    background-position: 37px 40px;
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .icon-control {
+        margin-left: 5%;
+    }
+
+    .icon-footer li{
+        margin-right: 6%;
+    }
+
+}
+@media (min-width: 768px)and (max-width: 991px){
+    .icon-control{
+        float: left;
+        margin-left: 105px;
+    }
+    .icon-networks {
+        margin-left: 0px;
+    }
+    .icon-networks li {
+        margin-right: 30px;
+    }
+    .icon-networks li a {
+        background-image: url("../images/sprite1.png");
+        width: 42px;
+        height: 45px;
+    }
+    .icon-networks li:nth-child(5) a {
+        background-position: -20px -4px;
+    }
+    .icon-networks li:nth-child(6) a {
+        background-position: 134px -4px;
+    }
+    .icon-networks li a:hover {
+        background-image: url("../images/sprite1.png");
+        width: 42px;
+        height: 45px;
+    }
+    .icon-networks li:nth-child(5) a:hover {
+        background-position: -20px -57px;
+    }
+    .icon-networks li:nth-child(6) a:hover {
+        background-position: 134px -57px;
+    }
+
+    .icon-footer li{
+        margin-right: 9%;
+    }
+}
+@media (max-width: 767px) {
+    .logo img{
+        margin: 0 auto;
+    }
+    .icon-control{
+        float: left;
+        margin-left: 0px;
+        margin-top: 20px;
+        padding-left: 5%;
+    }
+    .icon-control li {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    .icon-networks {
+        float: right;
+        padding-left: 0px;
+        margin-left: 0px;
+        padding-bottom: 0px;
+        margin-top: 20px;
+    }
+    .icon-networks li {
+        float: left;
+        margin-right: 10px !important;
+    }
+    .icon-networks li a {
+        background-image: url("../images/sprite1.png");
+        width: 42px;
+        height: 45px;
+    }
+    .icon-networks li:nth-child(5) a {
+        background-position: -20px -4px;
+    }
+    .icon-networks li:nth-child(6) a {
+        background-position: 134px -4px;
+    }
+    .icon-networks li a:hover {
+        background-image: url("../images/sprite1.png");
+        width: 42px;
+        height: 45px;
+    }
+    .icon-networks li:nth-child(5) a:hover {
+        background-position: -20px -57px;
+    }
+    .icon-networks li:nth-child(6) a:hover {
+        background-position: 134px -57px;
+    }
+    .icon-control li a {
+        background-image: url("../images/sprite1.png");
+        width: 45px;
+        height: 45px;
+    }
+    .icon-control li:first-child a {
+        background-position: 60px -4px;
+    }
+    .icon-control li a:hover {
+        background-image: url("../images/sprite1.png");
+        width: 45px;
+        height: 45px;
+    }
+    .icon-control li:first-child a:hover {
+        background-position: 60px -57px;
+    }
+
+    footer .navbar-toggle {
+        display: block;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border: none;
+        background: #00f817; /* Old browsers */
+        background: -moz-linear-gradient(top, #00f817 0%, #065700 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #00f817 0%,#065700 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #00f817 0%,#065700 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f817', endColorstr='#065700',GradientType=0 ); /* IE6-9 */
+    }
+
+    .icon-footer li a {
+        background-image: none;
+    }
+    .icon-footer li a:hover {
+        background-image: none;
+    }
 }

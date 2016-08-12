@@ -67,11 +67,11 @@
         </div>
         <div class="clearfix visible-sm-block visible-md-block visible-lg-block col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
             <ul class="icon-footer">
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/face_f.png"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta_f.png"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk_f.png"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube_f.png"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/twitter_f.png"></a></li>
+                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
             </ul>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12">

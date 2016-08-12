@@ -13,6 +13,7 @@
     <link href="<?=get_site_url()?>/wp-content/themes/best-people/css/fonts.css" rel="stylesheet">
     <link href="<?=get_site_url()?>/wp-content/themes/best-people/css/owl.carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="shortcut icon" type="image/png" href="<?=get_site_url()?>/wp-content/themes/best-people/images/ico.png"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,24 +29,27 @@
 <div class="container">
     <header>
         <div class="row">
-            <div class="logo col-xs-12 clearfix visible-xs-block"><a href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/logo.png"></a></div>
+            <div class="logo col-xs-12 clearfix visible-xs-block">
+                <a href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/Best_people_club_logo.png"></a>
+            </div>
             <div class="col-md-4 col-sm-4 col-xs-5">
                 <ul class="icon-networks">
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/face.png"></a></li>
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta.png"></a></li>
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/vk.png"></a></li>
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/youtube.png"></a></li>
-                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/face1.png"></a></li>
-                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta1.png"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"></a></li>
+                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"></a></li>
                 </ul>
             </div>
-            <div class="logo col-sm-4 clearfix visible-sm-block"><a href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/logo.png"></a></div>
+            <div class="logo col-sm-4 clearfix visible-sm-block">
+                <a href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/Best_people_club_logo.png"></a>
+            </div>
             <div class="col-md-4 col-sm-2 col-md-offset-4 clearfix visible-md-block visible-lg-block visible-sm-block">
                 <ul class="icon-control">
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="/"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/home.png"></a></li>
-                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter.png"></a></li>
-                    <li class="clearfix visible-md-block visible-lg-block"><a id="search_link" href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/glass.png"></a></li>
-
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="/"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="clearfix visible-md-block visible-lg-block"><a id="search_link" href="#"></a></li>
                     <li class="clearfix visible-md-block visible-lg-block">
                         <? if(is_user_logged_in()) :?>
                             <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
@@ -55,8 +59,7 @@
                             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"></button>
                         <? endif;?>
                     </li>
-
-                    <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
+                    <li class="clearfix visible-xs-block"><a href="#"></a></li>
                     <li class="enter clearfix visible-sm-block visible-xs-block">
                         <? if(is_user_logged_in()) :?>
                             <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
@@ -94,7 +97,7 @@
                                 <li class="dropdown">
                                     <a class="clearfix visible-sm-block visible-xs-block" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <a class="clearfix visible-md-block visible-lg-block active" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
+                                    <a class="clearfix visible-md-block visible-lg-block" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
                                     <ul class="dropdown-menu">
                                         <? $children = get_categories(array('parent' => $category->term_id, 'hide_empty' => false)); ?>
                                         <? foreach($children as $child):?>
@@ -108,7 +111,9 @@
                             <? endforeach;?>
                         </ul>
                     </div>
-                    <div class="col-md-4 clearfix visible-md-block visible-lg-block"><a class="navbar-brand" href="/"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/logo.png"></a></div>
+                    <div class="col-md-4 clearfix visible-md-block visible-lg-block"><a class="navbar-brand" href="/">
+                            <img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/Best_people_club_logo.png"></a>
+                    </div>
                     <div class="col-md-4">
                         <ul class="nav navbar-nav navbar-right">
                             <? $categories = get_categories(array('hide_empty' => false, 'exclude' => $exclude)); ?>
@@ -118,7 +123,7 @@
                                 <li class="dropdown">
                                     <a class="clearfix visible-sm-block visible-xs-block" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <a class="clearfix visible-md-block visible-lg-block active" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
+                                    <a class="clearfix visible-md-block visible-lg-block" href="<?=get_category_link($category->cat_ID);?>"><?=$category->name?></a>
                                     <ul class="dropdown-menu">
                                         <? $children = get_categories(array('parent' => $category->term_id, 'hide_empty' => false)); ?>
                                         <? foreach($children as $child):?>
@@ -135,7 +140,7 @@
             </nav>
             <div class="col-xs-5 clearfix visible-xs-block">
                 <ul class="icon-control">
-                    <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
+                    <li class="clearfix visible-xs-block"><a href="#"></a></li>
                     <li class=" enter clearfix visible-xs-block">
                         <? if(is_user_logged_in()) :?>
                             <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
