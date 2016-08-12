@@ -152,7 +152,7 @@ header .navbar-right .dropdown-menu li a {
 }
 
 header .navbar-right .dropdown-menu {
-    right: -44px;
+    right: -168px;
     left: auto;
 }
 
@@ -2173,7 +2173,7 @@ footer .dropdown-menu li a:hover {
 
     header .navbar-right .dropdown-menu {
         left: auto;
-        right: 0;
+        //right: 0;
     }
 
     .form-inline {
