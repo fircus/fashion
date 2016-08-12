@@ -3220,25 +3220,25 @@ footer .navbar li {
 .icon-footer li:nth-child(5) a {
     background-position: 37px 76px;
 }
-.icon-footer li a:hover {
+footer .icon-footer li a:hover {
     display: block;
     width: 30px;
     height: 30px;
     background-image: url(../images/sprite3.png);
 }
-.icon-footer li:first-child a:hover {
+footer .icon-footer li:first-child a:hover {
     background-position: 0 39px;
 }
-.icon-footer li:nth-child(2) a:hover {
+footer .icon-footer li:nth-child(2) a:hover {
     background-position: 238px 38px;
 }
-.icon-footer li:nth-child(3) a:hover {
+footer .icon-footer li:nth-child(3) a:hover {
     background-position: 170px 42px;
 }
-.icon-footer li:nth-child(4) a:hover {
+footer .icon-footer li:nth-child(4) a:hover {
     background-position: 103px 41px;
 }
-.icon-footer li:nth-child(5) a:hover {
+footer .icon-footer li:nth-child(5) a:hover {
     background-position: 37px 40px;
 }
 @media (min-width: 992px) and (max-width: 1199px){
