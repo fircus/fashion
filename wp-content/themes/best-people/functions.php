@@ -44,6 +44,8 @@ class WP_usual_article_Widget extends WP_Widget
         <?
     }
 
+
+
     public function widget($args, $instance)
     {
         $popular = new WP_Query('order_by=comment_count&posts_per_page=2&cat=' . $instance['cat']);
