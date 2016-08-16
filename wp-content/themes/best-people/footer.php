@@ -267,6 +267,17 @@
 </script>
 <script>
     $(document).ready(function() {
+        var owl = $(".photo-carousel .owl-carousel");
+        owl.owlCarousel({
+            items: 1,
+            singleItem: true,
+            dots: false,
+            autoPlay: 1000
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
         var owl = $("#slide5");
         owl.owlCarousel({
             items : 2,

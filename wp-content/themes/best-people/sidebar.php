@@ -8,4 +8,7 @@
     <?php if (is_active_sidebar('2-row-sidebar')) : ?>
         <?php dynamic_sidebar('2-row-sidebar'); ?>
     <?php endif; ?>
+    <?php if (is_active_sidebar('3-row-sidebar')) : ?>
+        <?php dynamic_sidebar('3-row-sidebar'); ?>
+    <?php endif; ?>
 </div>
