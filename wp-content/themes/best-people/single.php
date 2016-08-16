@@ -13,7 +13,7 @@
 
                         <div class="col-md-4 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block"><p
                                 class="p3">Поделиться</p></div>
-                        <div>
+                        <div
                             class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 clearfix visible-sm-block visible-md-block visible-lg-block">
                             <ul class="icon-footer">
                                 <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
