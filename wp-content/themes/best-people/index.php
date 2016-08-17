@@ -36,12 +36,18 @@
         <?php endif; ?>
     </div>
     <div class="row block video_photo">
-        <?php if ( is_active_sidebar( 'video' ) ) : ?>
-            <?php dynamic_sidebar( 'video' ); ?>
-        <?php endif; ?>
-        <?php if ( is_active_sidebar( 'photo' ) ) : ?>
-            <?php dynamic_sidebar( 'photo' ); ?>
-        <?php endif; ?>
+        <div class="col-md-6">
+            <h1>[VIDEO]</h1>
+            <?php if ( is_active_sidebar( 'video' ) ) : ?>
+                <?php dynamic_sidebar( 'video' ); ?>
+            <?php endif; ?>
+        </div>
+        <div class="col-md-6 photo-carousel">
+            <h1>[PHOTO]</h1>
+            <?php if ( is_active_sidebar( 'photo' ) ) : ?>
+                <?php dynamic_sidebar( 'photo' ); ?>
+            <?php endif; ?>
+        </div>
     </div>
     <div class="row block culture">
         <?php if ( is_active_sidebar( '7-row' ) ) : ?>

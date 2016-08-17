@@ -209,8 +209,8 @@
 <script src="<?=get_site_url()?>/wp-content/themes/best-people/ajax-login-script.js"></script>
 <script>
     $(document).ready(function() {
-        var owl = $(".top-carousel .owl-carousel");
-        owl.owlCarousel({
+        var owl1 = $(".top-carousel .owl-carousel");
+        owl1.owlCarousel({
             items : 1,
             loop: true,
             dots: false
@@ -218,98 +218,106 @@
         });
         // Custom Navigation Events
         $(".top-carousel .next").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
+            owl1.trigger('next.owl.carousel', [1000]);
             //owl.next();
         })
         $(".top-carousel .prev").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
+            owl1.trigger('prev.owl.carousel', [1000]);
         })
 
     });
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $(".big-carousel .owl-carousel");
-        owl.owlCarousel({
+        var owl2 = $(".big-carousel .owl-carousel");
+        owl2.owlCarousel({
             items : 1,
             loop: true,
             dots: false
         });
         // Custom Navigation Events
         $(".big-carousel .next").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
+            owl2.trigger('next.owl.carousel', [1000]);
             //owl.next();
         })
         $(".big-carousel .prev").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
+            owl2.trigger('prev.owl.carousel', [1000]);
         })
 
     });
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $(".small-carousel .owl-carousel");
-        owl.owlCarousel({
+        var owl3 = $(".small-carousel .owl-carousel");
+        owl3.owlCarousel({
             items : 3,
             loop: true,
             dots: false
         });
         // Custom Navigation Events
         $(".small-carousel .next").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
+            owl3.trigger('next.owl.carousel', [1000]);
             //owl.next();
         })
         $(".small-carousel .prev").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
+            owl3.trigger('prev.owl.carousel', [1000]);
         })
 
     });
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $(".photo-carousel .owl-carousel");
-        owl.owlCarousel({
+        var owl4 = $(".photo-carousel .owl-carousel");
+        owl4.owlCarousel({
             items: 1,
             singleItem: true,
             dots: false,
             autoPlay: 1000
         });
+        // Custom Navigation Events
+        $(".photo-carousel .next").click(function(){
+            owl4.trigger('next.owl.carousel', [1000]);
+            //owl.next();
+        });
+        $(".photo-carousel .prev").click(function(){
+            owl4.trigger('prev.owl.carousel', [1000]);
+        });
     });
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $("#slide5");
-        owl.owlCarousel({
+        var owl5 = $("#slide5");
+        owl5.owlCarousel({
             items : 2,
             loop: true,
             dots: false
         });
         // Custom Navigation Events
         $(".next5").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
+            owl5.trigger('next.owl.carousel', [1000]);
             //owl.next();
-        })
+        });
         $(".prev5").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
-        })
+            owl5.trigger('prev.owl.carousel', [1000]);
+        });
 
     });
 </script>
 <script>
     $(document).ready(function() {
-        var owl = $("#slide6");
-        owl.owlCarousel({
+        var owl6 = $("#slide6");
+        owl6.owlCarousel({
             items : 2,
             loop: true,
             dots: false
         });
         // Custom Navigation Events
         $(".next6").click(function(){
-            owl.trigger('next.owl.carousel', [1000]);
+            owl6.trigger('next.owl.carousel', [1000]);
             //owl.next();
-        })
+        });
         $(".prev6").click(function(){
-            owl.trigger('prev.owl.carousel', [1000]);
+            owl6.trigger('prev.owl.carousel', [1000]);
         });
 
 

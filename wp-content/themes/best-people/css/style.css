@@ -3059,6 +3059,28 @@ img {
     margin-left: 4%;
 }
 
+.photo-carousel .customNavigation .prev {
+    position: absolute;
+    bottom: 41%;
+    left: 3%;
+    z-index: 1;
+    display: none;
+}
+.photo-carousel .customNavigation .next {
+    float: right;
+    position: absolute;
+    bottom: 41%;
+    right: 3%;
+    z-index: 1;
+    display: none;
+}
+.photo-carousel:hover .customNavigation .prev, .photo-carousel:hover .customNavigation .next{
+    display: block;
+}
+.photo-carousel .customNavigation .prev img, .photo-carousel .customNavigation .next img{
+    border: none;
+}
+
 .logout-btn {
     background: none!important;
     margin-top: -8px;

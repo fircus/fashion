@@ -41,6 +41,11 @@
                                             на клубные вечеринки, участвуйте в акциях от партнеров сайта.
                                         </p>
                                     </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <button class="btn btn-default" role="button" type="submit" data-toggle="modal" data-target="#myModal" style="margin-top: 20px" >
+                                            Авторизироватся
+                                        </button>
+                                    </div>
                                 </div>',
         'fields' => array(
             'author' => '',

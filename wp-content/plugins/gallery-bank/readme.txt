@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: add album, add gallery, add pictures, best gallery plugin, filterable gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, image lightbox, image rotate, image slider, image slideshow, lightbox, mosaic, photo albums, photo gallery, photoalbum, responsive gallery, thumbnail view, video gallery, widget gallery, wordpress gallery, wp gallery, gallery bank
 Requires at least: 3.4
 Tested up to: 4.5.3
-Stable tag: 3.1.24
+Stable tag: 3.1.25
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -499,6 +499,11 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.1.25 =
+
+* Code Optimized
+* Few Bugs Fixed
 
 = 3.1.24 =
 

@@ -411,12 +411,9 @@ class WP_video_Widget extends WP_Widget
     public function widget($args, $instance)
     {
         ?>
-        <div class="col-md-6">
-            <h1>[<?= $instance['title'] ?>]</h1>
             <iframe width="420" height="315" src="<?= $instance['url'] ?>" frameborder="0" allowfullscreen></iframe>
             <h2><?= $instance['label'] ?><span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
             </h2>
-        </div>
         <?php
     }
 }
@@ -477,8 +474,7 @@ class WP_photo_Widget extends WP_Widget
         $popular = new WP_Query('orderby=date&order=DESC&posts_per_page=6&cat=' . $instance['cat']);
         $counter = 0;
         ?>
-        <div class="col-md-6 photo-carousel">
-            <h1>[<?= $instance['title'] ?>]</h1>
+
             <div class="owl-carousel owl-theme">
                 <?php
                 if (have_posts()) : while ($popular->have_posts()) : $popular->the_post();
@@ -496,7 +492,11 @@ class WP_photo_Widget extends WP_Widget
                 endwhile; endif;
                 ?>
             </div>
-        </div>
+            <div class="customNavigation">
+                <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
+                <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
+            </div>
+
         <?
     }
 }

@@ -11,33 +11,33 @@
                         <h2><? the_title(); ?></h2>
                         <? the_content(); ?>
 
-                        <div class="col-md-4 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block"><p
-                                class="p3">Поделиться</p></div>
-                        <div
-                            class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 clearfix visible-sm-block visible-md-block visible-lg-block">
-                            <ul class="icon-footer">
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
-                                    <a href="http://www.facebook.com/sharer.php?u=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
-
-                                    </a>
-                                </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
-                                    <a href="https://plus.google.com/share?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
-
-                                    </a>
-                                </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
-                                    <a href="http://vkontakte.ru/share.php?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>" target="_blank">
-
-                                    </a>
-                                </li>
-                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">
-                                    <a href="http://twitter.com/share?url=<?='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?>&text=<? the_title(); ?>" target="_blank">
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+<!--                        <div class="col-md-4 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block"><p-->
+<!--                                class="p3">Поделиться</p></div>-->
+<!--                        <div-->
+<!--                            class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 clearfix visible-sm-block visible-md-block visible-lg-block">-->
+<!--                            <ul class="icon-footer">-->
+<!--                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">-->
+<!--                                    <a href="http://www.facebook.com/sharer.php?u=--><?//='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?><!--" target="_blank">-->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">-->
+<!--                                    <a href="https://plus.google.com/share?url=--><?//='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?><!--" target="_blank">-->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">-->
+<!--                                    <a href="http://vkontakte.ru/share.php?url=--><?//='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?><!--" target="_blank">-->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="clearfix visible-sm-block visible-md-block visible-lg-block">-->
+<!--                                    <a href="http://twitter.com/share?url=--><?//='http://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']?><!--&text=--><?// the_title(); ?><!--" target="_blank">-->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
                     </div>
                     <?php comments_template(); ?>
                 </div>
