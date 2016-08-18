@@ -371,50 +371,58 @@ class WP_video_Widget extends WP_Widget
     public function update($new_instance, $old_instance)
     {
         $instance = array();
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['url'] = strip_tags($new_instance['url']);
-        $instance['label'] = strip_tags($new_instance['label']);
-        $instance['description'] = strip_tags($new_instance['description']);
+        $instance['cat'] = strip_tags($new_instance['cat']);
         return $instance;
     }
 
     public function form($instance)
     {
+        $categories = get_categories();
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Имя виджета</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
-                   value="<?php echo $instance['title']; ?>"/>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('url'); ?>">Видео url</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>"
-                   name="<?php echo $this->get_field_name('url'); ?>" type="text"
-                   value="<?php echo $instance['url']; ?>"/>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('label'); ?>">Подпись</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('label'); ?>"
-                   name="<?php echo $this->get_field_name('label'); ?>" type="text"
-                   value="<?php echo $instance['label']; ?>"/>
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('description'); ?>">Описание</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('description'); ?>"
-                   name="<?php echo $this->get_field_name('description'); ?>" type="text"
-                   value="<?php echo $instance['description']; ?>"/>
+            <label for="<?= $this->get_field_id('cat') ?>">Выберите рубрику</label> <br>
+            <select name="<?= $this->get_field_name('cat') ?>" id="<?= $this->get_field_id('cat') ?>">
+                <?
+                foreach ($categories as $link_cat) {
+                    echo '<option value="' . intval($link_cat->term_id) . '"'
+                        . selected($instance['cat'], $link_cat->term_id, false)
+                        . '>' . $link_cat->name . "</option>\n";
+                }
+                ?>
+            </select>
         </p>
         <?
     }
 
     public function widget($args, $instance)
     {
+        $popular = new WP_Query('orderby=date&order=DESC&posts_per_page=6&cat=' . $instance['cat']);
+        $counter = 0;
         ?>
-            <iframe width="420" height="315" src="<?= $instance['url'] ?>" frameborder="0" allowfullscreen></iframe>
-            <h2 class="h2_iframe"><?= $instance['label'] ?><span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
-            </h2>
-        <?php
+
+        <div class="owl-carousel owl-theme">
+            <?php
+            if (have_posts()) : while ($popular->have_posts()) : $popular->the_post();
+                ?>
+                <div class="item">
+                    <a href="<? the_permalink() ?>">
+                        <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl')); ?>
+                    </a>
+                    <h2><? the_title(); ?>
+                        <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+                    </h2>
+                </div>
+                <?php
+                $counter++;
+            endwhile; endif;
+            ?>
+        </div>
+        <div class="customNavigation">
+            <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
+            <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
+        </div>
+
+        <?
     }
 }
 
@@ -432,7 +440,6 @@ class WP_photo_Widget extends WP_Widget
     public function update($new_instance, $old_instance)
     {
         $instance = array();
-        $instance['title'] = strip_tags($new_instance['title']);
         $instance['cat'] = strip_tags($new_instance['cat']);
         $instance['description'] = strip_tags($new_instance['description']);
         return $instance;
@@ -442,12 +449,6 @@ class WP_photo_Widget extends WP_Widget
     {
         $categories = get_categories();
         ?>
-        <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Имя виджета</label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
-                   value="<?php echo $instance['title']; ?>"/>
-        </p>
         <p>
             <label for="<?= $this->get_field_id('cat') ?>">Выберите рубрику</label> <br>
             <select name="<?= $this->get_field_name('cat') ?>" id="<?= $this->get_field_id('cat') ?>">

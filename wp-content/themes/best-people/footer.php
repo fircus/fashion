@@ -286,6 +286,25 @@
 </script>
 <script>
     $(document).ready(function() {
+        var owl4 = $(".video-carousel .owl-carousel");
+        owl4.owlCarousel({
+            items: 1,
+            singleItem: true,
+            dots: false,
+            autoPlay: 1000
+        });
+        // Custom Navigation Events
+        $(".video-carousel .next").click(function(){
+            owl4.trigger('next.owl.carousel', [1000]);
+            //owl.next();
+        });
+        $(".video-carousel .prev").click(function(){
+            owl4.trigger('prev.owl.carousel', [1000]);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
         var owl5 = $("#slide5");
         owl5.owlCarousel({
             items : 2,

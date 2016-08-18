@@ -21,9 +21,11 @@
         <?php endif; ?>
     </div>
     <div class="row block clearfix visible-md-block clearfix visible-lg-block visible-sm-block">
-        <?php if ( is_active_sidebar( '4-row' ) ) : ?>
-            <?php dynamic_sidebar( '4-row' ); ?>
-        <?php endif; ?>
+        <div class="col1 col-md-12 big-carousel">
+            <?php if ( is_active_sidebar( '4-row' ) ) : ?>
+                <?php dynamic_sidebar( '4-row' ); ?>
+            <?php endif; ?>
+        </div>
     </div>
     <div class="row block event clearfix visible-md-block clearfix visible-lg-block">
         <?php if ( is_active_sidebar( '5-row' ) ) : ?>
@@ -36,13 +38,13 @@
         <?php endif; ?>
     </div>
     <div class="row block video_photo">
-        <div class="col-md-6">
+        <div class="col-md-6 single-carousel video-carousel">
             <h1>[VIDEO]</h1>
             <?php if ( is_active_sidebar( 'video' ) ) : ?>
                 <?php dynamic_sidebar( 'video' ); ?>
             <?php endif; ?>
         </div>
-        <div class="col-md-6 photo-carousel">
+        <div class="col-md-6 single-carousel photo-carousel">
             <h1>[PHOTO]</h1>
             <?php if ( is_active_sidebar( 'photo' ) ) : ?>
                 <?php dynamic_sidebar( 'photo' ); ?>
