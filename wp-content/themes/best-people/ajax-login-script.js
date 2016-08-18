@@ -125,4 +125,17 @@ jQuery(document).ready(function ($) {
         document.location.search = kvp.join('&');
     }
 
+    var list = $('#list1');
+    $('.dropdown').hover(
+        function () {
+            if ($(window).width() > 991) {
+                list.css('border-bottom', '1px solid #ffffff');
+            }
+    },
+        function () {
+            list.css('border-bottom','none');
+        }
+    );
+
 });
+

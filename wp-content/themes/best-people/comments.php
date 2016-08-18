@@ -1,7 +1,7 @@
 <div class="col-md-12 col-sm-12 comments">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="col-md-4 col-sm-4 col-xs-2 bottom"></div>
-        <div class="col-md-4 col-sm-4 col-xs-8"><h2>Комментарии</h2></div>
+        <div class="col-md-4 col-sm-4 col-xs-8"><h2>Comments</h2></div>
         <div class="col-md-4 col-sm-4 col-xs-2 bottom"></div>
     </div>
 

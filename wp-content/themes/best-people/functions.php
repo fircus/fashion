@@ -412,7 +412,7 @@ class WP_video_Widget extends WP_Widget
     {
         ?>
             <iframe width="420" height="315" src="<?= $instance['url'] ?>" frameborder="0" allowfullscreen></iframe>
-            <h2><?= $instance['label'] ?><span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+            <h2 class="h2_iframe"><?= $instance['label'] ?><span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
             </h2>
         <?php
     }
