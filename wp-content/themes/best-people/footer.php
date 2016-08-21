@@ -213,7 +213,10 @@
         owl1.owlCarousel({
             items : 1,
             loop: true,
-            dots: false
+            dots: false,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplaySpeed: 1000
 
         });
         // Custom Navigation Events
@@ -233,7 +236,10 @@
         owl2.owlCarousel({
             items : 1,
             loop: true,
-            dots: false
+            dots: false,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplaySpeed: 1000
         });
         // Custom Navigation Events
         $(".big-carousel .next").click(function(){
@@ -252,7 +258,10 @@
         owl3.owlCarousel({
             items : 3,
             loop: true,
-            dots: false
+            dots: false,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplaySpeed: 1000
         });
         // Custom Navigation Events
         $(".small-carousel .next").click(function(){
@@ -272,7 +281,11 @@
             items: 1,
             singleItem: true,
             dots: false,
-            autoPlay: 1000
+            loop: true,
+            autoPlay: 1000,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplaySpeed: 1000
         });
         // Custom Navigation Events
         $(".photo-carousel .next").click(function(){
@@ -290,8 +303,12 @@
         owl4.owlCarousel({
             items: 1,
             singleItem: true,
+            loop: true,
             dots: false,
-            autoPlay: 1000
+            autoPlay: 1000,
+            autoplay:true,
+            autoplayTimeout:2000,
+            autoplaySpeed: 1000
         });
         // Custom Navigation Events
         $(".video-carousel .next").click(function(){

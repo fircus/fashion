@@ -175,6 +175,7 @@ class WP_top_carousel_Widget extends WP_Widget
     {
         $popular = new WP_Query(array(
             'category__in' => $instance['category_list'],
+            'posts_per_page' => 6,
             'orderBy' => 'date',
             'order' => 'DESC'
         ));
@@ -196,7 +197,7 @@ class WP_top_carousel_Widget extends WP_Widget
                     </div>
                     <?php
                     $counter++;
-                    $used_categories[] = $categories[0]->cat_ID;
+                    //$used_categories[] = $categories[0]->cat_ID;
                 endwhile; endif;
                 ?>
             </div>
