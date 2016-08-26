@@ -3189,7 +3189,8 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     text-align: center;
     text-transform: uppercase;
     font-size: 32px;
-    color: #CDCDCD;
+    color: #E7E7E7;
+    text-shadow: 2px 2px 5px #9D9D9D;
     font-family: DroidSerif Bold;
 }
 
@@ -3493,15 +3494,17 @@ footer .icon-footer li:nth-child(5) a:hover {
     width: 100%!important;
     height: unset!important;
 }
-.big-carousel #huge_it_slideshow_left_gallery_1{
-    background: url('../images/prev.png');
-    height: 105px;
-    width: 59px;
-    left: 15px;
+.big-carousel #huge_it_slideshow_left_gallery_2{
+    background: url('../images/prev.png')!important;
+    height: 105px!important;
+    width: 59px!important;
+    left: 15px!important;
+    top:40%;
 }
-.big-carousel #huge_it_slideshow_right_gallery_1{
-    background: url('../images/next.png');
-    height: 105px;
-    width: 59px;
-    right: 15px;
+.big-carousel #huge_it_slideshow_right_gallery_2{
+    background: url('../images/next.png')!important;
+    height: 105px!important;
+    width: 59px!important;
+    right: 15px!important;
+    top:40%;
 }
