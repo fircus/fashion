@@ -1,23 +1,11 @@
 <footer>
     <div class="row">
-        <ul class="clearfix col-xs-6 visible-xs-block icon-footer">
+        <ul class="clearfix col-xs-5 visible-xs-block icon-footer">
             <li class="clearfix visible-xs-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/insta1.png"></a></li>
             <li class="clearfix visible-xs-block"><a href="#"><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/face1.png"></a></li>
         </ul>
-        <ul class="icon-control1 col-xs-6 clearfix visible-xs-block">
-            <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
-            <li class="enter clearfix visible-xs-block">
-                <? if(is_user_logged_in()) :?>
-                    <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
-                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-                    </a>
-                <? else:?>
-                    <a href="#" data-toggle="modal" data-target="#myModal" ><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/enter1.png"></a>
-                <? endif;?>
-
-            </li>
-        </ul>
-        <nav class="col-xs-12 navbar navbar-default" id="navigation1">
+        <div class="col-xs-2 col-sm-12">
+            <nav class="navbar navbar-default" id="navigation1">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -53,6 +41,20 @@
                 </ul>
             </div>
         </nav>
+        </div>
+        <ul class="icon-control1 col-xs-5 clearfix visible-xs-block">
+            <li class="letter clearfix visible-xs-block"><a href="#"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/themes/best-people/images/letter_1.png"></a></li>
+            <li class="enter clearfix visible-xs-block">
+                <? if(is_user_logged_in()) :?>
+                    <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                    </a>
+                <? else:?>
+                    <a href="#" data-toggle="modal" data-target="#myModal" ><img src="<?=get_site_url()?>/wp-content/themes/best-people/images/enter1.png"></a>
+                <? endif;?>
+
+            </li>
+        </ul>
         <div class="footer-a col-md-12 clearfix visible-sm-block visible-md-block visible-lg-block">
             <a href="#">Условия использования контента сайта</a>
         </div>
@@ -67,11 +69,11 @@
         </div>
         <div class="clearfix visible-sm-block visible-md-block visible-lg-block col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
             <ul class="icon-footer">
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
-                <li class="clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="facebook_f clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="insta_f clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="vk_f clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="youtube_f clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
+                <li class="twitter_f clearfix visible-sm-block visible-md-block visible-lg-block"><a href="#"></a></li>
             </ul>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12">

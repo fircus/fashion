@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 if (isset($_REQUEST["param"]))
 {
 	global $wpdb;
@@ -20,17 +21,30 @@ if (isset($_REQUEST["param"]))
 		$sort_by = isset($_REQUEST["sort_by"]) ? esc_attr($_REQUEST["sort_by"]) : "";
 
 		$album_type = "images";
-		include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php"))
+		{
+			include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php";
+		}
+
 		switch ($gallery_type)
 		{
 			case "masonry":
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/masonry-gallery.php"))
+			{
 				include GALLERY_BK_PLUGIN_DIR . "/front_views/masonry-gallery.php";
+			}
 			break;
 			case "thumbnail":
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/thumbnail-gallery.php"))
+			{
 				include GALLERY_BK_PLUGIN_DIR . "/front_views/thumbnail-gallery.php";
+			}
 			break;
 	}
-	include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php";
+	if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php"))
+	{
+		include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php";
+	}
 	die();
 	}
 }

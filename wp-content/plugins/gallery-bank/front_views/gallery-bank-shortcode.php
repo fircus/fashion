@@ -1,3 +1,6 @@
+<?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
+?>
 <style>
 #TB_ajaxContent { width: 752px !important; }
 </style>

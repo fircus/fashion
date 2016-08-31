@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 global $wpdb,$current_user;
 if (!is_user_logged_in()) {
 	return;

@@ -1,3 +1,6 @@
+<?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
+?>
 <button class="album_back_btn" id="back_button<?php echo $unique_id; ?>" style="display: none;" onclick="view_albums<?php echo $unique_id; ?>(<?php echo $unique_id; ?>);"><span style="color: <?php echo $button_text_color; ?>;"> <?php echo $back_button_text; ?></span></button>
 <!------------------------------------------->
 

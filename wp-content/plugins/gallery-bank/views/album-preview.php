@@ -1,5 +1,5 @@
 <?php
-
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($gb_role)
 {
 	case "administrator":
@@ -18,7 +18,10 @@ if (!current_user_can($user_role_permission))
 }
 else
 {
-	include GALLERY_BK_PLUGIN_DIR . "/views/includes_common_before.php";
+	if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/includes_common_before.php"))
+	{
+		include GALLERY_BK_PLUGIN_DIR . "/views/includes_common_before.php";
+	}
 	?>
 	<!--suppress ALL -->
 	<form id="album_preview" class="layout-form">
@@ -67,9 +70,9 @@ else
 														<?php
 														for ($flag = 0;$flag < count($pics);$flag++)
 														{
-				                                            $image_title = $image_desc_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
-				                                            $image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
-				                                            if ($pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
+                              $image_title = $image_desc_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
+                              $image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
+                              if ($pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
 															{
 																if ($pics[$flag]->video == 1)
 																{
@@ -97,23 +100,24 @@ else
 															?>
 																<div class="imgLiquidFill dynamic_css">
 																	<?php
-																	if ($pics[$flag]->video == 1) {
+																	if ($pics[$flag]->video == 1)
+																	{
 																		?>
-																		<img imageid="<?php echo $pics[$flag]->pic_id; ?>" id="ux_gb_img" type="video"
-					                                                    src="<?php echo stripcslashes($video_thumb_url); ?>"/>
-						                                            <?php
-						                                            } else {
-						                                                ?>
-						                                                <img imageid="<?php echo $pics[$flag]->pic_id; ?>"
-						                                                    id="ux_gb_img" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL . $pics[$flag]->thumbnail_url); ?>"/>
-						                                            <?php
-						                                            }
-						                                            ?>
+																		<img imageid="<?php echo $pics[$flag]->pic_id; ?>" id="ux_gb_img" type="video" src="<?php echo stripcslashes($video_thumb_url); ?>"/>
+                                      <?php
+                                  }
+																	else
+																	{
+                                    ?>
+                                      <img imageid="<?php echo $pics[$flag]->pic_id; ?>" id="ux_gb_img" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL . $pics[$flag]->thumbnail_url); ?>"/>
+                                    <?php
+                                  }
+                                  ?>
 																</div>
 															</a>
-					                                      <?php
+					                    <?php
 														}
-				                                    	?>
+				                    ?>
 													</div>
 												</div>
 											</div>
@@ -128,15 +132,18 @@ else
 		</div>
 	</form>
 	<?php
-	include GALLERY_BK_PLUGIN_DIR . "/views/includes_common_after.php";
+	if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/includes_common_after.php"))
+	{
+		include GALLERY_BK_PLUGIN_DIR . "/views/includes_common_after.php";
+	}
 	?>
 	<script type="text/javascript">
-	    function select_imges_in_row() {
-	        var row = jQuery("#ux_ddl_ImagesRow").val();
-	        window.location.href = "<?php echo site_url();?>/wp-admin/admin.php?page=album_preview&album_id=<?php echo $album_id;?>&row=" + row;
-	    }
+  function select_imges_in_row()
+	{
+      var row = jQuery("#ux_ddl_ImagesRow").val();
+      window.location.href = "<?php echo site_url();?>/wp-admin/admin.php?page=album_preview&album_id=<?php echo $album_id;?>&row=" + row;
+  }
 	</script>
-<?php 
+<?php
 }
 ?>
-	

@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($gb_role)
 {
 	case "administrator":
@@ -54,8 +55,8 @@ else
 			{
 			});
 		}
-		
+
 	</script>
-<?php 
+<?php
 }
 ?>

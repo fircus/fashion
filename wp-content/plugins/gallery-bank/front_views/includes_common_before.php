@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 global $wpdb;
 $unique_id = rand(100, 10000);
 $effect = explode("-", $special_effect);

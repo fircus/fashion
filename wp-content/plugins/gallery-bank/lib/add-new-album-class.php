@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 $dynamicArray = array();
 $dynamicId = mt_rand(10, 10000);
 switch($gb_role)

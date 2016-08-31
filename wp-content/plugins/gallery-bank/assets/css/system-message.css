@@ -29,7 +29,8 @@
 
 .custom-message.red {
 	display: block;
-	background: #F8E9E9;
+
+	background: url(../images/icons/icon-error.png) no-repeat 1px 8px #F8E9E9;
 	border: 1px solid #E4BBBC;
 	color: #b80000;
 }

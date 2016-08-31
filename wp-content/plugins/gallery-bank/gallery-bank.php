@@ -4,12 +4,13 @@ Plugin Name: Gallery Bank Lite Edition
 Plugin URI: http://tech-banker.com
 Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
 Author: Tech Banker
-Version: 3.1.25
+Version: 3.1.27
 Author URI: http://tech-banker.com
 License: GPLv3 or later
 */
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   Define   Constants  ///////////////////////////////////////////////////////////////////////////////////////////
+//	 Define	 Constants	///////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if (!defined("GALLERY_FILE")) define("GALLERY_FILE","gallery-bank/gallery-bank.php");
 if (!defined("GALLERY_MAIN_DIR")) define("GALLERY_MAIN_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank");
@@ -17,7 +18,7 @@ if (!defined("GALLERY_MAIN_UPLOAD_DIR")) define("GALLERY_MAIN_UPLOAD_DIR", dirna
 if (!defined("GALLERY_MAIN_THUMB_DIR")) define("GALLERY_MAIN_THUMB_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank/thumbs/");
 if (!defined("GALLERY_MAIN_ALB_THUMB_DIR")) define("GALLERY_MAIN_ALB_THUMB_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank/album-thumbs/");
 if (!defined("GALLERY_BK_PLUGIN_DIRNAME")) define("GALLERY_BK_PLUGIN_DIRNAME", plugin_basename(dirname(__FILE__)));
-if (!defined("GALLERY_BK_PLUGIN_DIR")) define("GALLERY_BK_PLUGIN_DIR",  plugin_dir_path( __FILE__ ));
+if (!defined("GALLERY_BK_PLUGIN_DIR")) define("GALLERY_BK_PLUGIN_DIR",	plugin_dir_path( __FILE__ ));
 if (!defined("GALLERY_BK_THUMB_URL")) define("GALLERY_BK_THUMB_URL", content_url()."/gallery-bank/gallery-uploads/");
 if (!defined("GALLERY_BK_THUMB_SMALL_URL")) define("GALLERY_BK_THUMB_SMALL_URL", content_url()."/gallery-bank/thumbs/");
 if (!defined("GALLERY_BK_ALBUM_THUMB_URL")) define("GALLERY_BK_ALBUM_THUMB_URL", content_url()."/gallery-bank/album-thumbs/");
@@ -51,7 +52,21 @@ if(!function_exists("plugin_install_script_for_gallery_bank"))
 {
 	function plugin_install_script_for_gallery_bank()
 	{
-		global $wpdb;
+		global $wpdb,$current_user;
+		if (!is_user_logged_in())
+		{
+			return;
+		}
+		if(is_super_admin())
+		{
+			$gb_role = "administrator";
+		}
+		else
+		{
+			$gb_role = $wpdb->prefix . "capabilities";
+			$current_user->role = array_keys($current_user->$gb_role);
+			$gb_role = $current_user->role[0];
+		}
 		if (is_multisite())
 		{
 			$blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
@@ -358,7 +373,7 @@ if(!function_exists("gallery_bank_custom_plugin_row"))
 		if ($file == GALLERY_BK_PLUGIN_BASENAME)
 		{
 			$gallery_bank_row_meta = array(
-					"docs"  => "<a href='".esc_url( apply_filters("gallery_bank_docs_url","http://tech-banker.com/products/wp-gallery-bank/knowledge-base/"))."' title='".esc_attr(__( "View Gallery Bank Documentation",gallery_bank))."'>".__("Docs",gallery_bank)."</a>",
+					"docs"	=> "<a href='".esc_url( apply_filters("gallery_bank_docs_url","http://tech-banker.com/products/wp-gallery-bank/knowledge-base/"))."' title='".esc_attr(__( "View Gallery Bank Documentation",gallery_bank))."'>".__("Docs",gallery_bank)."</a>",
 					"gopremium" => "<a href='" .esc_url( apply_filters("gallery_bank_premium_editions_url", "http://tech-banker.com/products/wp-gallery-bank/pricing/"))."' title='".esc_attr(__( "View Gallery Bank Premium Editions",gallery_bank))."'>".__("Go for Premium!",gallery_bank)."</a>",
 			);
 			return array_merge($links,$gallery_bank_row_meta);

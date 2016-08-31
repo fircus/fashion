@@ -1,4 +1,7 @@
-<?php remove_filter ('comment_text', 'wpautop');?>
+<?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
+remove_filter ('comment_text', 'wpautop');
+?>
 <style>
 .<?php echo $class_images_in_row ?> > a
 {

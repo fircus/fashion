@@ -1,5 +1,5 @@
 <?php
-
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch ($album_type) {
 	case "images":
 		if ($album_seperator == 1) {

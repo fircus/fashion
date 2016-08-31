@@ -1223,6 +1223,10 @@ footer .dropdown-menu li a:hover {
 @media (max-width: 767px) {
 
 
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .logo img {
         margin: 0 auto;
     }
@@ -1305,10 +1309,10 @@ footer .dropdown-menu li a:hover {
     }
 
     header .navbar-collapse {
-        width: 280px;
+        width: 277px;
         position: absolute;
         top: 80px;
-        right: -116px;
+        right: calc(50% - 137px);
         padding: 15px;
         z-index: 2;
         background-color: #9F9F9F;
@@ -1766,15 +1770,17 @@ footer .dropdown-menu li a:hover {
     }
 
     footer .navbar {
-        width: 15%;
+        width: 50px;
+    }
+
+    footer .col-xs-2 {
+        padding: 0px;
     }
 
     footer .navbar-toggle {
+        margin: 5px auto 0;
         display: block;
         height: 50px;
-        position: absolute;
-        bottom: 0;
-        left: 25%;
         border: none;
         background: #00f817; /* Old browsers */
         background: -moz-linear-gradient(top, #00f817 0%, #065700 100%); /* FF3.6-15 */
@@ -1923,17 +1929,16 @@ footer .dropdown-menu li a:hover {
     footer .icon-control1 {
         float: right;
         margin-top: 30px;
-        padding-left: 8%;
     }
 
     footer .icon-control1 li {
         float: left;
-        margin-left: 8%;
+        margin-left: 4%;
     }
+
 
     .icon-footer {
         margin-top: 30px;
-        padding-right: 10%;
     }
 
     .icon-footer li {
@@ -2528,6 +2533,10 @@ footer .dropdown-menu li a:hover {
 
     .lifestyle p {
         width: 100%;
+    }
+
+    footer .navbar {
+        margin-bottom: 20px;
     }
 
     footer .navbar-header {
@@ -3152,7 +3161,7 @@ img {
     float: right;
     position: absolute;
     top: 170px;
-    right: 20px;
+    right: 14px;
     z-index: 1;
     display: none;
 }
@@ -3216,16 +3225,16 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     width: 30px;
     height: 25px;
 }
-.icon-networks li:first-child a {
+.icon-networks .facebook a {
     background-position: 343px -8px;
 }
-.icon-networks li:nth-child(2) a {
+.icon-networks .insta a {
     background-position: 300px -8px;
 }
-.icon-networks li:nth-child(3) a {
+.icon-networks .vk a {
     background-position: 253px -8px;
 }
-.icon-networks li:nth-child(4) a {
+.icon-networks .youtube a {
     background-position: 203px -8px;
 }
 .icon-networks li a:hover{
@@ -3234,16 +3243,16 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     width: 30px;
     height: 25px;
 }
-.icon-networks li:first-child a:hover {
+.icon-networks .facebook a:hover {
     background-position: 343px -43px;
 }
-.icon-networks li:nth-child(2) a:hover {
+.icon-networks .insta a:hover {
     background-position: 300px -45px;
 }
-.icon-networks li:nth-child(3) a:hover {
+.icon-networks .vk a:hover {
     background-position: 253px -47px;
 }
-.icon-networks li:nth-child(4) a:hover {
+.icon-networks .youtube a:hover {
     background-position: 203px -47px;
 }
 .icon-control li a{
@@ -3252,13 +3261,13 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     width: 30px;
     height: 25px;
 }
-.icon-control li:first-child a {
+.icon-control .back a {
     background-position: 505px -8px;
 }
-.icon-control li:nth-child(2) a {
+.icon-control .letter a {
     background-position: 468px -8px;
 }
-.icon-control li:nth-child(3) a {
+.icon-control .search a {
     background-position: 430px -9px;
 }
 .icon-control li a:hover{
@@ -3267,15 +3276,15 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     width: 30px;
     height: 25px;
 }
-.icon-control li:first-child a:hover {
+.icon-control .back a:hover {
     background-position: 505px -45px;
 }
-.icon-control li:nth-child(2) a:hover {
+.icon-control .letter a:hover {
     background-position: 468px -46px;
 }
-.icon-control li:nth-child(3) a:hover,
-.icon-control li:nth-child(3) a:focus,
-.icon-control li:nth-child(3) a:active {
+.icon-control .search a:hover,
+.icon-control .search a:focus,
+.icon-control .search a:active {
     background-position: 426px -45px;
 }
 .icon-control {
@@ -3306,7 +3315,7 @@ footer .navbar li {
 }
 .icon-footer li{
     list-style: none;
-    margin-right: 10%;
+    margin-right: 9%;
 }
 .icon-footer li a {
     display: block;
@@ -3314,41 +3323,41 @@ footer .navbar li {
     height: 30px;
     background-image: url(../images/sprite3.png);
 }
-.icon-footer li:first-child a {
+.icon-footer .facebook_f a {
     background-position: 0 76px;
 }
-.icon-footer li:nth-child(2) a {
+.icon-footer .insta_f a {
     background-position: 238px 76px;
 }
-.icon-footer li:nth-child(3) a {
+.icon-footer .vk_f a {
     background-position: 170px 76px;
 }
-.icon-footer li:nth-child(4) a {
+.icon-footer .youtube_f a {
     background-position: 103px 76px;
 }
-.icon-footer li:nth-child(5) a {
+.icon-footer .twitter_f a {
     background-position: 37px 76px;
 }
-footer .icon-footer li a:hover {
+.icon-footer li a:hover {
     display: block;
     width: 30px;
     height: 30px;
     background-image: url(../images/sprite3.png);
 }
-footer .icon-footer li:first-child a:hover {
-    background-position: 0 39px;
+.icon-footer .facebook_f a:hover {
+    background-position: 0 118px;
 }
-footer .icon-footer li:nth-child(2) a:hover {
-    background-position: 238px 38px;
+.icon-footer .insta_f a:hover {
+    background-position: 238px 117px;
 }
-footer .icon-footer li:nth-child(3) a:hover {
-    background-position: 170px 42px;
+.icon-footer .vk_f a:hover {
+    background-position: 170px 120px;
 }
-footer .icon-footer li:nth-child(4) a:hover {
-    background-position: 103px 41px;
+.icon-footer .youtube_f a:hover {
+    background-position: 103px 120px;
 }
-footer .icon-footer li:nth-child(5) a:hover {
-    background-position: 37px 40px;
+.icon-footer .twitter_f a:hover {
+    background-position: 37px 120px;
 }
 @media (min-width: 992px) and (max-width: 1199px){
     .icon-control {
@@ -3460,20 +3469,6 @@ footer .icon-footer li:nth-child(5) a:hover {
     }
     .icon-control li:first-child a:hover {
         background-position: 60px -57px;
-    }
-
-    footer .navbar-toggle {
-        display: block;
-        height: 50px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border: none;
-        background: #00f817; /* Old browsers */
-        background: -moz-linear-gradient(top, #00f817 0%, #065700 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #00f817 0%,#065700 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #00f817 0%,#065700 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f817', endColorstr='#065700',GradientType=0 ); /* IE6-9 */
     }
 
     .icon-footer li a {

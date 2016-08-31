@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CREATING MENUS
 //---------------------------------------------------------------------------------------------------------------//
@@ -118,8 +119,14 @@ if(!function_exists("gallery_bank"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/dashboard.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/dashboard.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/dashboard.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_shortcode"))
@@ -137,8 +144,14 @@ if(!function_exists("gallery_bank_shortcode"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
+		}
 	}
 }
 if(!function_exists("save_album"))
@@ -162,8 +175,14 @@ if(!function_exists("save_album"))
 		);
 		if($album_count <= 3)
 		{
-			include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-			include_once GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php";
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+			{
+			  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+			}
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php"))
+			{
+				include_once GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php";
+			}
 		}
 		else
 		{
@@ -186,8 +205,14 @@ if(!function_exists("global_settings"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/settings.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/settings.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/settings.php";
+		}
 	}
 }
 if(!function_exists("gallery_album_sorting"))
@@ -205,8 +230,14 @@ if(!function_exists("gallery_album_sorting"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/album-sorting.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/album-sorting.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/album-sorting.php";
+		}
 	}
 }
 if(!function_exists("images_sorting"))
@@ -224,8 +255,14 @@ if(!function_exists("images_sorting"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/images-sorting.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/images-sorting.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/images-sorting.php";
+		}
 	}
 }
 if(!function_exists("album_preview"))
@@ -243,8 +280,14 @@ if(!function_exists("album_preview"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/album-preview.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/album-preview.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/album-preview.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_system_status"))
@@ -262,8 +305,14 @@ if(!function_exists("gallery_bank_system_status"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-bank-system-report.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/gallery-bank-system-report.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-bank-system-report.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_purchase"))
@@ -281,8 +330,14 @@ if(!function_exists("gallery_bank_purchase"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/purchase_pro_version.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/purchase_pro_version.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/purchase_pro_version.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_recommended_plugins"))
@@ -300,8 +355,14 @@ if(!function_exists("gallery_bank_recommended_plugins"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/recommended-plugins.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/recommended-plugins.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/recommended-plugins.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_other_services"))
@@ -319,8 +380,14 @@ if(!function_exists("gallery_bank_other_services"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/other-services.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/other-services.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/other-services.php";
+		}
 	}
 }
 if(!function_exists("gallery_auto_plugin_update"))
@@ -338,8 +405,14 @@ if(!function_exists("gallery_auto_plugin_update"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/automatic-plugin-update.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/automatic-plugin-update.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/automatic-plugin-update.php";
+		}
 	}
 }
 if(!function_exists("gallery_bank_feature_request"))
@@ -357,8 +430,14 @@ if(!function_exists("gallery_bank_feature_request"))
 			$current_user->role = array_keys($current_user->$gb_role);
 			$gb_role = $current_user->role[0];
 		}
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-feedback.php";
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/header.php"))
+		{
+		  include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+		}
+		if(file_exists(GALLERY_BK_PLUGIN_DIR . "/views/gallery-feedback.php"))
+		{
+			include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-feedback.php";
+		}
 	}
 }
 //--------------------------------------------------------------------------------------------------------------//
@@ -446,7 +525,11 @@ if (isset($_REQUEST["action"])) {
 						$current_user->role = array_keys($current_user->$gb_role);
 						$gb_role = $current_user->role[0];
 					}
-					include_once GALLERY_BK_PLUGIN_DIR . "/lib/add-new-album-class.php";
+					if(file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/add-new-album-class.php"))
+					{
+						include_once GALLERY_BK_PLUGIN_DIR . "/lib/add-new-album-class.php";
+					}
+
 				}
 			}
 		break;
@@ -456,7 +539,10 @@ if (isset($_REQUEST["action"])) {
 			{
 				function front_view_all_albums_library()
 				{
-					include_once GALLERY_BK_PLUGIN_DIR . "/lib/front-view-all-albums-class.php";
+					if(file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/front-view-all-albums-class.php"))
+					{
+							include_once GALLERY_BK_PLUGIN_DIR . "/lib/front-view-all-albums-class.php";
+					}
 				}
 			}
 		break;
@@ -477,7 +563,10 @@ if (isset($_REQUEST["action"])) {
 						$current_user->role = array_keys($current_user->$gb_role);
 						$gb_role = $current_user->role[0];
 					}
-					include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
+					if(file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/upload.php"))
+					{
+						include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
+					}
 				}
 			}
 		break;
@@ -546,29 +635,51 @@ if(!function_exists("extract_short_code_for_gallery_images"))
 		{
 			ob_start();
 			global $wpdb;
-			include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php";
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php"))
+			{
+				include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php";
+			}
 			switch ($album_type) {
 				case "images":
 					switch ($gallery_type) {
 						case "masonry":
+						if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/masonry-gallery.php"))
+						{
 							include GALLERY_BK_PLUGIN_DIR . "/front_views/masonry-gallery.php";
+						}
 						break;
 						case "thumbnail":
+						if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/thumbnail-gallery.php"))
+						{
 							include GALLERY_BK_PLUGIN_DIR . "/front_views/thumbnail-gallery.php";
+						}
 						break;
 					}
 				break;
 				case "grid":
-					include GALLERY_BK_PLUGIN_DIR . "/front_views/grid-albums.php";
+						if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/grid-albums.php"))
+						{
+							include GALLERY_BK_PLUGIN_DIR . "/front_views/grid-albums.php";
+						}
 				break;
 				case "list":
-					include GALLERY_BK_PLUGIN_DIR . "/front_views/listed-album.php";
+						if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/listed-album.php"))
+						{
+							include GALLERY_BK_PLUGIN_DIR . "/front_views/listed-album.php";
+						}
 				break;
 				case "individual":
-					include GALLERY_BK_PLUGIN_DIR . "/front_views/single-album.php";
+						if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/single-album.php"))
+						{
+							include GALLERY_BK_PLUGIN_DIR . "/front_views/single-album.php";
+						}
 				break;
 			}
-			include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php";
+			if(file_exists(GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php"))
+			{
+				include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_after.php";
+			}
+
 			$gallery_bank_output_album = ob_get_clean();
 			wp_reset_query();
 			return $gallery_bank_output_album;
