@@ -8,7 +8,7 @@
                     <div class="col-md-12 article">
                         <p class="p2"><? the_date('d.m.Y') ?><a href="<?=get_category_link($categories[0]->cat_ID);?>"><span>[</span><?=$categories[0]->name?><span>]</span></a>
                         </p>
-                        <h2><? the_title(); ?></h2>
+                        <h1><? the_title(); ?></h1>
                         <? the_content(); ?>
 
 <!--                        <div class="col-md-4 col-sm-12 clearfix visible-sm-block visible-md-block visible-lg-block"><p-->

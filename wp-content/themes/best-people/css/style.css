@@ -614,6 +614,12 @@ p {
     margin-right: 0;
 }
 
+.article h1{
+    font-size: 30px;
+    text-align: left;
+    margin-top: 10px;
+}
+
 .bottom {
     border-bottom: 2px solid black;
     height: 40px;
