@@ -25,6 +25,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
+
 <div id="wptime-plugin-preloader"></div>
 <div class="container">
     <header>
@@ -34,12 +35,12 @@
             </div>
             <div class="col-md-4 col-sm-4 col-xs-5">
                 <ul class="icon-networks">
-                    <li class="facebook clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
-                    <li class="insta clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="facebook clearfix visible-md-block visible-lg-block"><a target="_blank" href="https://www.facebook.com/BestPeopleClub/"></a></li>
+                    <li class="insta clearfix visible-md-block visible-lg-block"><a target="_blank" href="https://www.instagram.com/best__people__club/"></a></li>
                     <li class="vk clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
                     <li class="youtube clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
-                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"></a></li>
-                    <li class="clearfix visible-xs-block visible-sm-block"><a href="#"></a></li>
+                    <li class="clearfix visible-xs-block visible-sm-block"><a target="_blank" href="https://www.facebook.com/BestPeopleClub/"></a></li>
+                    <li class="clearfix visible-xs-block visible-sm-block"><a target="_blank" href="https://www.instagram.com/best__people__club/"></a></li>
                 </ul>
             </div>
             <div class="logo col-sm-4 clearfix visible-sm-block">
