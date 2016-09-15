@@ -408,6 +408,10 @@ class WP_video_Widget extends WP_Widget
                 <div class="item">
                     <a href="<? the_permalink() ?>">
                         <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl')); ?>
+                        <div class="customNavigation">
+                            <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
+                            <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
+                        </div>
                     </a>
                     <h2><? the_title(); ?>
                         <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
@@ -418,10 +422,7 @@ class WP_video_Widget extends WP_Widget
             endwhile; endif;
             ?>
         </div>
-        <div class="customNavigation">
-            <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
-            <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
-        </div>
+
 
         <?
     }
@@ -484,6 +485,10 @@ class WP_photo_Widget extends WP_Widget
                     <div class="item">
                         <a href="<? the_permalink() ?>">
                             <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl')); ?>
+                            <div class="customNavigation">
+                                <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
+                                <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
+                            </div>
                         </a>
                         <h2><? the_title(); ?>
                             <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
@@ -494,11 +499,6 @@ class WP_photo_Widget extends WP_Widget
                 endwhile; endif;
                 ?>
             </div>
-            <div class="customNavigation">
-                <a class="btn prev"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/prev.png"></a>
-                <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
-            </div>
-
         <?
     }
 }

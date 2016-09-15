@@ -70,6 +70,7 @@
 
             </li>
         </ul>
+        <div class="clearfix"></div>
         <div class="footer-a col-md-12 clearfix visible-sm-block visible-md-block visible-lg-block">
             <a href="#">Условия использования контента сайта</a>
         </div>

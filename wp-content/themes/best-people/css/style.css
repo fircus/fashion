@@ -3158,7 +3158,7 @@ img {
 
 .single-carousel .customNavigation .prev {
     position: absolute;
-    top: 170px;
+    top: 27%;
     left: 20px;
     z-index: 1;
     display: none;
@@ -3166,7 +3166,7 @@ img {
 .single-carousel .customNavigation .next {
     float: right;
     position: absolute;
-    top: 170px;
+    top: 27%;
     right: 14px;
     z-index: 1;
     display: none;
