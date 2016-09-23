@@ -72,14 +72,14 @@
         </ul>
         <div class="clearfix"></div>
         <div class="footer-a col-md-12 clearfix visible-sm-block visible-md-block visible-lg-block">
-            <a href="#">Условия использования контента сайта</a>
+            <a href="http://bestpeopleclub.com/usloviya-ispolzovaniya-kontenta-sajta/">Условия использования контента сайта</a>
         </div>
         <div class="col-md-12 clearfix visible-sm-block visible-md-block visible-lg-block">
             <ul class="list-footer">
-                <li><a href="#">Рекламодателям</a></li>
-                <li><a href="#">Партнерам</a></li>
-                <li><a href="#">Вакансии</a></li>
-                <li><a href="#">Обратная связь</a></li>
+                <li><a href="http://bestpeopleclub.com/reklamodatelyam/">Рекламодателям</a></li>
+                <li><a href="http://bestpeopleclub.com/partneram/">Партнерам</a></li>
+                <li><a href="http://bestpeopleclub.com/vakansii/">Вакансии</a></li>
+                <li><a href="http://bestpeopleclub.com/obratnaya-svyaz/">Обратная связь</a></li>
                 <li><a href="#">Подписаться на рассылку</a></li>
             </ul>
         </div>
