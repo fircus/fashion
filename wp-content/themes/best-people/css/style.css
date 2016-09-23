@@ -147,7 +147,6 @@ header .dropdown-menu li a:hover {
 header .navbar-left .dropdown-menu li a {
     padding-left: 11px;
     padding-right: 7px;
-
 }
 
 header .navbar-right .dropdown-menu li a {
@@ -1068,6 +1067,7 @@ footer .dropdown-menu li a {
     font-family: MinionPro-Semibold;
     text-transform: none;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 footer .dropdown-menu li a:hover {

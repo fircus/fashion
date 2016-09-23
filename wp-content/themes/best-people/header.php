@@ -49,7 +49,7 @@
             <div class="col-md-4 col-sm-2 col-md-offset-4 clearfix visible-md-block visible-lg-block visible-sm-block">
                 <ul class="icon-control">
                     <li class="back clearfix visible-md-block visible-lg-block"><a href="/"></a></li>
-                    <li class="letter clearfix visible-md-block visible-lg-block"><a href="#"></a></li>
+                    <li class="letter clearfix visible-md-block visible-lg-block"><a href="mailto:info@bestpeopleclub.com"></a></li>
                     <li class="search clearfix visible-md-block visible-lg-block"><a id="search_link" href="#"></a></li>
                     <li class="enter clearfix visible-md-block visible-lg-block">
                         <? if(is_user_logged_in()) :?>
@@ -141,7 +141,7 @@
             </nav>
             <div class="col-xs-5 clearfix visible-xs-block">
                 <ul class="icon-control">
-                    <li class="clearfix visible-xs-block"><a href="#"></a></li>
+                    <li class="clearfix visible-xs-block"><a href="mailto:info@bestpeopleclub.com"></a></li>
                     <li class=" enter clearfix visible-xs-block">
                         <? if(is_user_logged_in()) :?>
                             <a type="button" class="btn-lg logout-btn" href="<?=wp_logout_url($_SERVER['REQUEST_URI']);?>" title="Выход">

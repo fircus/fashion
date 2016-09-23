@@ -256,15 +256,17 @@
             loop: true,
             dots: false,
             autoplay: true,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
 
         });
         // Custom Navigation Events
         $(".top-carousel .next").click(function () {
             owl1.trigger('next.owl.carousel', [1000]);
             //owl.next();
-        })
+        });
         $(".top-carousel .prev").click(function () {
             owl1.trigger('prev.owl.carousel', [1000]);
         })
@@ -279,14 +281,16 @@
             loop: true,
             dots: false,
             autoplay: true,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
         });
         // Custom Navigation Events
         $(".big-carousel .next").click(function () {
             owl2.trigger('next.owl.carousel', [1000]);
             //owl.next();
-        })
+        });
         $(".big-carousel .prev").click(function () {
             owl2.trigger('prev.owl.carousel', [1000]);
         })
@@ -301,14 +305,15 @@
             loop: true,
             dots: false,
             autoplay: true,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
         });
         // Custom Navigation Events
         $(".small-carousel .next").click(function () {
             owl3.trigger('next.owl.carousel', [1000]);
-            //owl.next();
-        })
+        });
         $(".small-carousel .prev").click(function () {
             owl3.trigger('prev.owl.carousel', [1000]);
         })
@@ -326,7 +331,9 @@
             autoPlay: 1000,
             autoplay: true,
             autoplayTimeout: 2000,
-            autoplaySpeed: 1000
+            autoplaySpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
         });
         // Custom Navigation Events
         $(".photo-carousel .next").click(function () {
@@ -348,13 +355,14 @@
             dots: false,
             autoPlay: 1000,
             autoplay: true,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
         });
         // Custom Navigation Events
         $(".video-carousel .next").click(function () {
             owl4.trigger('next.owl.carousel', [1000]);
-            //owl.next();
         });
         $(".video-carousel .prev").click(function () {
             owl4.trigger('prev.owl.carousel', [1000]);
@@ -372,7 +380,6 @@
         // Custom Navigation Events
         $(".next5").click(function () {
             owl5.trigger('next.owl.carousel', [1000]);
-            //owl.next();
         });
         $(".prev5").click(function () {
             owl5.trigger('prev.owl.carousel', [1000]);
@@ -391,7 +398,6 @@
         // Custom Navigation Events
         $(".next6").click(function () {
             owl6.trigger('next.owl.carousel', [1000]);
-            //owl.next();
         });
         $(".prev6").click(function () {
             owl6.trigger('prev.owl.carousel', [1000]);
