@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <p class="p1"><? the_time('d.m.Y') ?><span class="red"><br class="clearfix visible-md-block visible-lg-block">
-				<a class="category1" href="<?=get_category_link(get_the_category()[0]->cat_ID);?>"><span>[</span><?=get_the_category()[0]->name?><span>]</span></a></p>
+<!--                        <a class="category1" href="--><?//=get_category_link(get_the_category()[0]->cat_ID);?><!--"><span>[</span>--><?//=get_the_category()[0]->name?><!--<span>]</span></a></p>-->
                         <h3><? the_title(); ?></h3>
                         <p class="clearfix visible-sm-block visible-md-block visible-lg-block">
                             <?= get_the_excerpt()?>

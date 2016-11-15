@@ -1322,7 +1322,7 @@ footer .dropdown-menu li a:hover {
         padding: 15px;
         z-index: 2;
         background-color: #9F9F9F;
-        opacity: 0.85;
+        opacity: 0.95;
     }
 
     header .navbar li {
@@ -1498,6 +1498,11 @@ footer .dropdown-menu li a:hover {
     header .navbar-header {
         text-align: center;
     }
+
+    header .navbar-collapse input[type=search]::-webkit-input-placeholder {color:#ffffff;}
+    header .navbar-collapse input[type=search]::-moz-placeholder          {color:#ffffff;}
+    header .navbar-collapse input[type=search]:-moz-placeholder           {color:#ffffff;}
+    header .navbar-collapse input[type=search]:-ms-input-placeholder      {color:#ffffff;}
 
     .letter {
         padding-top: 4px;
@@ -3508,4 +3513,10 @@ footer .navbar li {
     width: 59px!important;
     right: 15px!important;
     top:40%;
+}
+
+.widget-title-link, .widget-title-link:hover {
+    display: inline!important;
+    color: unset;
+    text-decoration: none;
 }

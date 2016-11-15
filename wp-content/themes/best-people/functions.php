@@ -58,7 +58,7 @@ class WP_usual_article_Widget extends WP_Widget
                 <a href="<? the_permalink() ?>">
                     <?= get_the_post_thumbnail(null, 'full', array('class' => 'img-responsive')); ?>
                 </a>
-                <h2><? the_title(); ?></h2>
+                <h2><a class="widget-title-link" href="<? the_permalink() ?>"><? the_title(); ?></a></h2>
                 <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?= get_the_excerpt(); ?></p>
             </div>
             <?php
@@ -125,7 +125,7 @@ class WP_4_small_articles_Widget extends WP_Widget
                 <a href="<? the_permalink() ?>">
                     <?= get_the_post_thumbnail(null, 'full', array('class' => 'img-responsive')); ?>
                 </a>
-                <h3><? the_title(); ?></h3>
+                <h3><a class="widget-title-link" href="<? the_permalink() ?>"><? the_title(); ?></a></h3>
                 <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?= get_the_excerpt(); ?></p>
             </div>
             <?php
@@ -342,7 +342,7 @@ class WP_small_carousel_Widget extends WP_Widget
                         <a href="<? the_permalink() ?>">
                             <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl')); ?>
                         </a>
-                        <h3><? the_title(); ?></h3>
+                        <h3><a class="widget-title-link" href="<? the_permalink() ?>"><? the_title(); ?></a></h3>
                     </div>
                     <?php
                     $counter++;
@@ -413,8 +413,11 @@ class WP_video_Widget extends WP_Widget
                             <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
                         </div>
                     </a>
-                    <h2><? the_title(); ?>
-                        <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+                    <h2>
+                        <a class="widget-title-link" href="<? the_permalink() ?>">
+                            <? the_title(); ?>
+                            <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+                        </a>
                     </h2>
                 </div>
                 <?php
@@ -490,8 +493,11 @@ class WP_photo_Widget extends WP_Widget
                                 <a class="btn next"><img src="<?= get_site_url() ?>/wp-content/themes/best-people/images/next.png"></a>
                             </div>
                         </a>
-                        <h2><? the_title(); ?>
-                            <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+                        <h2>
+                            <a class="widget-title-link" href="<? the_permalink() ?>">
+                                <? the_title(); ?>
+                                <span class="clearfix visible-sm-block"><?= $instance['description'] ?></span>
+                            </a>
                         </h2>
                     </div>
                     <?php
@@ -561,6 +567,8 @@ class WP_4_small_articles_table_Widget extends WP_Widget
                     <?= get_the_post_thumbnail(null, 'medium', array('class' => 'img-responsive')); ?>
                 </a>
                 <h3><? the_title(); ?></h3>
+<!--                <h3><a class="widget-title-link" href="--><?// the_permalink() ?><!--">--><?// the_title(); ?><!--</a></h3>-->
+
                 <p class="clearfix visible-sm-block  visible-lg-block"><?= get_the_excerpt(); ?></p>
                 <!--                <a href="-->
                 <?// the_permalink() ?><!--" class="col-md-3 clearfix visible-md-block visible-lg-block">-->
