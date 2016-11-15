@@ -639,7 +639,7 @@ class WP_3_vertical_articles_Widget extends WP_Widget
                     <a href="<? the_permalink() ?>">
                         <?= get_the_post_thumbnail(null, 'full', array('class' => 'lazyOwl img-responsive')); ?>
                     </a>
-                    <h4><? the_title(); ?></h4>
+                    <h4><a class="widget-title-link" href="<? the_permalink() ?>"><? the_title(); ?></a></h4>
                     <p class="clearfix visible-sm-block visible-md-block visible-lg-block"><?= get_the_excerpt(); ?></p>
                     <a class="next col-md-3" href="#"></a>
                 </div>

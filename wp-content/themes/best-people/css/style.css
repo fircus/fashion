@@ -1816,7 +1816,7 @@ footer .dropdown-menu li a:hover {
         padding-bottom: 5px;
         z-index: 2;
         background-color: #9F9F9F;
-        opacity: 0.85;
+        opacity: 0.95;
     }
 
     footer .navbar-header {
@@ -1947,6 +1947,9 @@ footer .dropdown-menu li a:hover {
         margin-left: 4%;
     }
 
+    footer .icon-control1 li.enter {
+        margin-left: 15%;
+    }
 
     .icon-footer {
         margin-top: 30px;
@@ -2585,7 +2588,7 @@ footer .dropdown-menu li a:hover {
         padding-top: 15px;
         z-index: 2;
         background-color: #9F9F9F;
-        opacity: 0.85;
+        opacity: 0.95;
     }
 
     footer .navbar li {
@@ -3210,7 +3213,7 @@ header .logout-btn:focus span, header .logout-btn:hover span, header .logout-btn
     text-transform: uppercase;
     font-size: 32px;
     color: #E7E7E7;
-    text-shadow: 2px 2px 5px #9D9D9D;
+    text-shadow: 2px 2px 3px #5F5F5F;
     font-family: DroidSerif Bold;
 }
 
@@ -3519,4 +3522,12 @@ footer .navbar li {
     display: inline!important;
     color: unset;
     text-decoration: none;
+}
+
+.icon-control .letter {
+    margin-top: 1px;
+}
+
+.icon-control .enter button {
+    margin-top: 3px;
 }

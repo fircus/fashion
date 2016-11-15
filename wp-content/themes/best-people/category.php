@@ -62,7 +62,7 @@
                 <div class="col-md-4 col-xs-12">
                     <p class="p1"><? the_time('d.m.Y') ?><span class="red"><br class="clearfix visible-md-block visible-lg-block">
 				    <a class="category1" href="<?=get_category_link($categories[0]->cat_ID);?>"><span>[</span><?=$categories[0]->name?><span>]</span></a></p>
-                    <h3><? the_title(); ?></h3>
+                    <h3><a href="<? the_permalink()?>" class="widget-title-link"><? the_title(); ?></a></h3>
                     <p class="clearfix visible-sm-block visible-md-block visible-lg-block">
                         <?= get_the_excerpt()?>
                     </p>
